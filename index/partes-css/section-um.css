@@ -10,20 +10,22 @@ body {
     TOPO E LOGO
 ================================= */
 .top-bar {
-    background: #fff; /* Fundo branco */
+    background: #fff;
+    /* Fundo branco */
     width: 100%;
-    position: relative; 
+    position: relative;
 }
 
 .container {
-    padding: 10px 20px; 
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    max-height: 80px;
+    max-height: 150px;
+    margin-left: 20px;
 }
 
 /* ==============================
@@ -31,18 +33,18 @@ body {
 ================================= */
 .name-slogan {
     text-align: center;
-    color: #4f8fa7; /* Cor azul-clara para o nome/slogan */
+    color: #4f8fa7;
+    /* Cor azul-clara para o nome/slogan */
 }
 
 .name-slogan .name {
-    /* Mantenha a fonte se estiver no seu projeto */
-    /* font-family: "vaseline-extra"; */ 
-    font-size: 40px;
+    font-family: "vaseline-extra";
+    font-size: 55px;
     margin: 5px auto;
 }
 
 .name-slogan .slogan {
-    font-size: 12px;
+    font-size: 18px;
 }
 
 /* ==============================
@@ -50,21 +52,23 @@ body {
 ================================= */
 .right-column-stack {
     display: flex;
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    align-items: flex-end; /* Alinha o conteúdo à direita */
-    gap: 10px; /* Espaço entre a linha social e o botão hambúrguer */
+    flex-direction: column;
+    /* Empilha os elementos verticalmente */
+    align-items: center;
+    gap: 20px;
+    /* Espaço entre a linha social e o botão hambúrguer */
 }
 
 /* 1. Estilo dos Ícones Sociais (Linha de Cima) */
 .social {
-    font-size: 20px;
+    font-size: 30px;
     display: flex;
     gap: 10px;
 }
 
 .social a i {
     color: rgb(0, 119, 255);
-    transition:  0.2s ease;
+    transition: 0.2s ease;
 }
 
 .social a:hover i {
@@ -73,13 +77,24 @@ body {
 
 /* 2. Estilo do botão de toggle (Linha de Baixo) */
 .menu-toggle {
-    display: block; 
+    display: block;
     background: none;
     border: none;
-    font-size: 26px;
-    color: #4f8fa7; /* Cor azul-clara/água para o ícone de hambúrguer */
+    font-size: 30px;
+    color: #00bbff;
+    /* Cor azul-clara/água para o ícone de hambúrguer */
     cursor: pointer;
     padding: 0;
+}
+
+.menu-toggle i {
+    /* transição suave para a rotação */
+    transition: transform 0.3s ease;
+}
+
+/* Aplica a rotação ao ícone quando o botão tem a classe 'show' */
+.menu-toggle.show i {
+    transform: rotate(90deg);
 }
 
 /* ==============================
@@ -87,28 +102,28 @@ body {
 ================================= */
 .menu {
     /* Posiciona o menu suspenso em relação ao topo da página */
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    z-index: 90; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 90;
 }
 
-/* 🍔 Estilo da lista (oculta por padrão) */
+/* Estilo da lista (oculta por padrão) */
 .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    
-    /* Posicionamento do menu */
+
+    /* Posicionamento e aparência do menu suspenso */
     position: absolute;
-    right: 20px; 
-    top: 120px; /* Desce o menu abaixo da Coluna da Direita */
-    background-color: #4f8fa7; /* Fundo azul-claro do menu */
+    right: 10px;
+    top: 140px;
+    background-color: #4f8fa7;
     width: 200px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    flex-direction: column; 
-  
+    flex-direction: column;
+    z-index: 100;
 
     /* Efeitos de Transição e Ocultação */
     opacity: 0;
@@ -116,7 +131,7 @@ body {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* 🍔 Mostrar o menu quando a classe 'show' é ativada pelo JS */
+/* Mostrar o menu quando a classe 'show' é ativada pelo JS */
 .menu ul.show {
     opacity: 1;
     visibility: visible;
