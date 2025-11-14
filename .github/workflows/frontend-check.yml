@@ -1,0 +1,29 @@
+# Nome do workflow (vai aparecer no GitHub Actions)
+name: Frontend Check
+
+# Quando o workflow deve rodar:
+on:
+  push:
+    paths:
+      - "index.html"       # Se mexer no HTML
+      - "assets/css/**"    # Se mexer em QUALQUER arquivo dentro de assets/css
+      - "assets/img/**"    # Se mexer em QUALQUER imagem
+  pull_request:
+    paths:
+      - "index.html"
+      - "assets/css/**"
+      - "assets/img/**"
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest   # Sistema operacional do ambiente
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4   # baixa seu código na máquina do workflow
+
+      - name: Listar arquivos HTML e CSS
+        run: |
+          echo "Arquivos detectados:"
+          # Procura por .html e .css no projeto
+          find . -name "*.html" -o -name "*.css"

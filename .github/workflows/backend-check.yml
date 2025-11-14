@@ -1,0 +1,30 @@
+# Nome: aparece no GitHub Actions
+name: Backend Check
+
+# Roda apenas quando arquivos dentro de backend/ mudam
+on:
+  push:
+    paths:
+      - "backend/**"   # qualquer arquivo dentro
+      
+  pull_request:
+    paths:
+      - "backend/**"
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest   # Ambiente Linux
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Conferir pasta backend
+        run: |
+          # Verifica se a pasta existe
+          if [ -d "backend" ]; then
+            echo "Pasta backend encontrada."
+            ls backend
+          else
+            echo "Pasta backend não existe ainda."
+          fi

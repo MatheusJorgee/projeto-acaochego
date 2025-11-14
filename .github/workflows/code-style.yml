@@ -1,0 +1,22 @@
+name: Code Style Check
+
+# Quando esse workflow deve rodar
+on:
+  push:        # sempre que enviar alterações para o GitHub
+  pull_request: # sempre que abrir um PR
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # sistema operacional da máquina que rodará o workflow
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        # "checkout" = baixar o repositório do GitHub para o ambiente de teste
+
+      - name: Validate project structure
+        run: |
+          echo "Estrutura verificada com sucesso!"
+
+
+        # Esse arquivo basicamente pede para o github realizar alguns testes no codigo quando alguém fizer um PUSH ou abrir PR

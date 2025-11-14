@@ -1,0 +1,6 @@
+# Arquivos que não quero enviar ao GitHub
+node_modules/
+.vscode/
+.env
+*.log
+backup/

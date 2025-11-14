@@ -1,16 +1,16 @@
 @font-face {
     font-family: "vaseline-extra";
-    src: url(/Fonts/Vaseline\ Extra.ttf);
+    src: url(/frontend/assets/fonts/Vaseline\ Extra.ttf);
 }
 
 @font-face {
     font-family: "Montserrat-regular";
-    src: url(/Fonts/Montserrat/Montserrat-Regular.ttf);
+    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: "Montserrat-bold";
-    src: url(/Fonts/Montserrat/Montserrat-Bold.ttf);
+    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf);
 }
 
 /* Existem muitas fontes nas pastas, precisamos escolher qual usar e otimizar essa quantidade */ 
