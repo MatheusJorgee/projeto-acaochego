@@ -1,0 +1,152 @@
+/* ==============================
+    TOPO E LOGO
+================================= */
+.top-bar {
+  background: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-height: 150px;
+  margin-left: 20px;
+}
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
+.name-slogan {
+  text-align: center;
+  color: #5893f3;
+}
+
+.name-slogan .name {
+  font-family: "vaseline-extra";
+  /* Fonte personalizada */
+  font-size: 55px;
+  margin: 5px auto;
+}
+
+.name-slogan .slogan {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+/* ==============================
+    COLUNA DIREITA (Social + Hambúrguer)
+================================= */
+.right-column-stack {
+  display: flex;
+  flex-direction: column;
+  /* Ícones em coluna */
+  align-items: center;
+  gap: 20px;
+}
+
+/* ÍCONES SOCIAIS */
+.social {
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.social a i {
+  color: black;
+  transition: 0.2s ease;
+}
+
+.social a:hover i {
+  opacity: 0.8;
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #5893f3;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle i {
+  transition: 0.3s ease;
+}
+
+/* Rotaciona o ícone quando ativo */
+.menu-toggle.show i {
+  transform: rotate(90deg);
+}
+
+/* ==============================
+    MENU DE HAMBÚRGUER
+================================= */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 90;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 10px;
+  top: 140px;
+  background-color: #5893f3;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu ul.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
+.line {
+  border-bottom: 7px solid #5893f3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
