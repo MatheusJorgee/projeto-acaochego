@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==============================
+    TOPO E LOGO
+================================= */
+.top-bar {
+    background: #fff;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 150px;
+    margin-left: 20px;
+}
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
+.name-slogan {
+    text-align: center;
+    color: #5893f3;
+}
+
+.name-slogan .name {
+    font-family: "vaseline-extra";
+    /* Fonte personalizada */
+    font-size: 55px;
+    margin: 5px auto;
+}
+
+.name-slogan .slogan {
+    font-family: "Montserrat-bold", sans-serif;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+/* ==============================
+    COLUNA DIREITA (Social + Hambúrguer)
+================================= */
+.right-column-stack {
+    display: flex;
+    flex-direction: column;
+    /* Ícones em coluna */
+    align-items: center;
+    gap: 20px;
+}
+
+/* ÍCONES SOCIAIS */
+.social {
+    font-size: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.social a i {
+    color: black;
+    transition: 0.2s ease;
+}
+
+.social a:hover i {
+    opacity: 0.8;
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #5893f3;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle i {
+    transition: 0.3s ease;
+}
+
+/* Rotaciona o ícone quando ativo */
+.menu-toggle.show i {
+    transform: rotate(90deg);
+}
+
+/* ==============================
+    MENU DE HAMBÚRGUER
+================================= */
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 90;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    top: 140px;
+    background-color: #5893f3;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu ul.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
+.line {
+    border-bottom: 7px solid #5893f3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    background-color: rgb(241, 241, 241);
+    height: 3250px;
+}
+
+#banner {
+    display: flex;
+    background-image: url(../img/banner-numeros.png);
+    background-attachment: fixed;
+    background-position: left;
+    background-color: rgba(0, 0, 0, 0.229);
+    background-blend-mode: multiply;
+    /*background-color: #d8e3f0;*/
+    height: 550px;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    /*flex-direction: row;*/
+}
+
+#div-imagem {
+    /*background-color:antiquewhite;*/
+    padding: 10px 10px;
+    width: 56%;
+    float: right;
+}
+
+#div-imagem img {
+    width: 700px;
+    height: 510px;
+}
+
+#txt-banner {
+    /*background-color: rgb(255, 135, 135);*/
+    padding: 90px 90px;
+    text-align: left;
+    width: 35%;
+    color: #d8e3f0;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+.btn-banner {
+    background-color: #edce71;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+/* DIV COM TEXTO*/
+
+#texto-primeiro {
+    margin-top: 20px;
+    background-image: url(../img/background_patas.png);
+    background-color: rgb(241, 241, 241);
+    height: 80px;
+    padding: 60px 100px;
+    align-items: center;
+    text-align: center;
+}
+
+/* ======================
+     GRID DE FOTOS 1
+========================= */
+
+#bloco-fotos {
+    border-radius: 10px;
+    margin-top: 20px;
+    background-image: url(../img/background_patas.png);
+    height: 610px;
+    padding: 50px 60px;
+    margin-bottom: 20px;
+}
+
+.grid1 {
+    display: grid;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.grid1 div {
+    font-size: 20px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.grid1>div:nth-child(n +2) {
+    height: 350px;
+    grid-template-columns: 1fr 1fr;
+    background-color: #bf6b6b;
+    align-items: center;
+}
+
+.grid1>div#foto_1 {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    background-color: #848484;
+    height: 620px;
+}
+
+.grid1>div#foto_4 {
+    background-color: #9ff1cb;
+    height: 260px;
+    display: block;
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 2;
+}
+
+.grid1:hover .texto-hover {
+    align-items: center;
+    font-size: 20px;
+    opacity: 1;
+}
+
+/* ==========================
+    DIV COM FOTOS DOS ANIMAIS
+============================= */
+
+#animais {
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    /*background-color: #DCD8CC;*/
+    max-height: 1535px;
+    padding: 50px 60px;
+    margin-bottom: 20px;
+}
+
+#texto-segundo {
+    background-color: #f7f7f7;
+    height: 20px;
+    padding: 20px 100px;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.line-texto {
+    margin-top: 40px;
+    border-bottom: 2px solid #00000063;
+}
+
+.div-pesquisa {
+    margin: 20px;
+    height: 50px;
+    /*background-color: #ba4343;*/
+    padding: 0 20px;
+}
+
+.caixa-pesquisa {
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 5px;
+    width: 220px;
+    height: 30px;
+    border: 2px solid #848484;
+    border-radius: 10px;
+    align-items: center;
+    color: #dcd4be;
+}
+
+.txt-pesquisa {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #848484;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.cartao {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+/* ======================
+     GRID DE FOTOS 2
+========================= */
+
+.grid2 {
+    display: grid;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    /*background-color: rgb(215, 151, 151);*/
+    height: 1400px;
+}
+
+.item2 {
+    /*border: 5px solid #faf9f1;*/
+    border: 5px solid #fdfcfc;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #faf9f1;
+    max-height: 440px;
+    border-radius: 10px;
+}
+
+.item2 img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.item2 .descricao {
+    /* background-color: #edce71;*/
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.grid2 .item2 {
+    display: flex;
+    flex-direction: column;
+}
+
+a.btn-adotar {
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #edf2f8;
+    background-color: #6f7e93;
+    display: inline-block;
+}
+
+a.btn-apadrinhar {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #dcd4be;
+    display: inline-block;
+}
+
+#animais .btn-animais {
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+#animais .btn-animais a {
+    width: 90px;
+    padding: 15px;
+    background-color: #948e7f;
+    border-radius: 5px;
+}
+
+#adocao {
+    background-color: #60b3e2;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* ============================== 
+    FOOTER 
+================================= */
+footer {
+  background-color: #5893f3;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 200px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column .sociais-footer {
+  text-align: unset;
+  font-size: 30px;
+  gap: 20px;
+
+}
+
+.footer-column .logo {
+  max-width: 150px;
+
+}
+
+.footer-column h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.footer-column li{
+  list-style: none;
+}
+
+.footer-column ul {
+  list-style: none; 
+  padding: 0;   
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 6px;
+  
+}
+
+.footer-column ul li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.sociais-footer a {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+footer a {
+  text-decoration: none;
+  color: #fff; 
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+

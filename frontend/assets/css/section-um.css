@@ -543,8 +543,9 @@ footer {
     align-items: END; 
 }
 
-.container-logos a{
-
+.container-logos a
+.footer-column .logo{
+max-width: 150px;
 }
 
 .logo {
