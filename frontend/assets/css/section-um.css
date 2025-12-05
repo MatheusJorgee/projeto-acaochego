@@ -100,7 +100,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 90;
+  z-index: 1;
 }
 
 .menu ul {
@@ -314,33 +314,6 @@ body {
     Animais para adoção
 ================================= */
 
-.animais-adocao {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 40px;
-  justify-items: center; 
-  align-items: center; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 20px;
-}
-
-.animais-adocao h1{
-  text-align: center;
-  font-family: "Montserrat-bold";
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  grid-column: 1 / -1; 
-}
-
-.animais-adocao img {
-  width: 100%; 
-  height: auto; 
-  object-fit: cover;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
 
 
 /* ==============================
@@ -455,8 +428,6 @@ body {
     rgba(0, 0, 0, 3) 90%,
     rgba(0, 0, 0, 0) 100%
   );
-  /* Para maior compatibilidade */
-
 }
 
 .logos-slide {
@@ -521,86 +492,77 @@ footer {
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    max-width: 1600px; 
-    margin: 0 auto; 
-    gap: 80px;
-}
-
-.container-logos, 
-.footer-column, 
-.coluna-contatos {
-    min-width: 250px; 
-
+  display: flex;
+  max-width: 1700px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .container-logos {
-    max-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: END; 
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
-.container-logos a
-.footer-column .logo{
-max-width: 150px;
+.sociais-footer {
+  text-align: end;
 }
 
 .logo {
-    max-width: 150px;
-    margin-bottom: 15px;
+  max-width: 150px;
+  margin-bottom: 15px;
 }
 
 .sociais-footer a {
-    color: #fff;
-    font-size: 24px;
-    margin-right: 15px;
-    transition: color 0.3s ease; 
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-left: 5px;
+  transition: color 0.3s ease;
 }
 
 .sociais-footer a:hover {
-    color: #636363; 
+  color: #636363;
 }
 
-.footer-column h3, 
+.footer-column h3,
 .coluna-contatos h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #636363; 
-    padding-bottom: 5px;
-    display: inline-block;
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #636363;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 .coluna-links {
-    display: flex; 
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  line-height: 1.5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-column li {
-    margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer-column a {
-    color: #ff0000;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-column a:hover {
-    color: #636363; 
-    text-decoration: underline;
+  color: #636363;
+  text-decoration: underline;
 }
 
-/* Coluna de Contatos */
 .coluna-contatos p {
-    margin-bottom: 10px;
-    line-height: 1.5; 
+  line-height: 1.5;
 }

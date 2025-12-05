@@ -13,4 +13,10 @@
     src: url(/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf);
 }
 
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
 /* Existem muitas fontes nas pastas, precisamos escolher qual usar e otimizar essa quantidade */ 
