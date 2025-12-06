@@ -7,8 +7,6 @@ const cachorros = {
         sexo: "Fêmea",
         local: "São Paulo - SP",
 
-        subtitle: "(Ex Filhote Caixa 8)",
-
         imagens: [
             "./assets/img/Nanda/Nanda1.jpg",
             "./assets/img/Nanda/Nanda2.jpg",

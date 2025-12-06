@@ -1,6 +1,9 @@
+*{
+  font-family: "Montserrat-Regular", sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: "Montserrat-Regular", sans-serif;
   font-size: 16px;
 }
 
@@ -35,7 +38,6 @@ body {
 
 .name-slogan .name {
   font-family: "vaseline-extra";
-  /* Fonte personalizada */
   font-size: 55px;
   margin: 5px auto;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" typetext="text/css" href="./assets/css/estilo2.css">
-    <link rel="stylesheet" typetext="text/css" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
     <title>Acãochego</title>
 </head>
@@ -56,54 +56,63 @@
         <section id="info-dogs">
 
             <div id="container-slider" class="container-slider">
-
-                <div class="container-images" id="dog-slider">
-                </div>
+                <div class="container-images" id="dog-slider"></div>
             </div>
 
             <div class="bloco2">
-                <div class="tabela-container">
 
-                    <h1 id="dog-name"></h1>
-                    <h3 id="dog-subtitle"></h3>
+                <h1 id="dog-name"></h1>
+                <h3 id="dog-subtitle"></h3>
 
-                    <br>
-
-                    <table>
-                        <tr>
-                            <th>Nome</th>
-                            <td id="t-nome"></td>
-                        </tr>
-                        <tr>
-                            <th>Idade</th>
-                            <td id="t-idade"></td>
-                        </tr>
-                        <tr>
-                            <th>Raça</th>
-                            <td id="t-raca"></td>
-                        </tr>
-                        <tr>
-                            <th>Porte</th>
-                            <td id="t-porte"></td>
-                        </tr>
-                        <tr>
-                            <th>Sexo</th>
-                            <td id="t-sexo"></td>
-                        </tr>
-                        <tr>
-                            <th>Localização</th>
-                            <td id="t-local"></td>
-                        </tr>
-                    </table>
+                <div class="descricao-pet">
+                    <p id="dog-description"></p>
                 </div>
 
+                <div class="fatos-essenciais">
+
+                    <h2>Detalhes Essenciais:</h2>
+
+                    <div class="grid-detalhes">
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-bone"></i> Nome:</span>
+                            <span id="t-nome" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-paw"></i> Idade:</span>
+                            <span id="t-idade" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-shield-dog"></i> Raça:</span>
+                            <span id="t-raca" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-dog"></i> Porte:</span>
+                            <span id="t-porte" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-venus-mars"></i> Sexo:</span>
+                            <span id="t-sexo" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-location-dot"></i> Localização:</span>
+                            <span id="t-local" class="valor"></span>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="linha-botao">
-                    <a class="btn-forms" href="#">Formulário de Adoção</a>
-                    <a class="btn-forms" href="#">Formulário de Apadrinhamento</a>
+                    <a class="btn-adocao" href="#">Formulário de Adoção</a>
+                    <a class="btn-apadrinhamento" href="#">Formulário de Apadrinhamento</a>
                 </div>
+
             </div>
         </section>
-
         <section class="div-cartoes">
             <div class="txt-titulos">
                 <h2>MAIS IMAGENS</h2>
@@ -209,10 +218,11 @@
         </div>
         </div>
     </footer>
-
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dogs2.js"></script>
     <script src="./assets/js/dogs.js"></script>
     <script src="./assets/js/dog-page.js"></script>
-    <script src="./assets/js/main.js"></script>
+
 
 </body>
 

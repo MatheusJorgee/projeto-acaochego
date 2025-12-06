@@ -1,43 +1,193 @@
 * {
+  font-family: "Montserrat-Regular", sans-serif;
+}
+
+body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-main {
-  background-color: rgb(241, 241, 241);
-  height: 2050px;
-}
-
-.perfil {
-  display: none;
-}
-.perfil.ativo {
-  display: block;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
 }
 
+main {
+  background-color: rgb(247 247 247);
+}
+
+/* ==============================
+    TOPO E LOGO
+================================= */
+.top-bar {
+  background: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-height: 150px;
+  margin-left: 20px;
+}
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
+.name-slogan {
+  text-align: center;
+  color: #5893f3;
+}
+
+.name-slogan .name {
+  font-family: "vaseline-extra";
+  /* Fonte personalizada */
+  font-size: 55px;
+  margin: 5px auto;
+}
+
+.name-slogan .slogan {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+/* ==============================
+    COLUNA DIREITA (Social + Hambúrguer)
+================================= */
+.right-column-stack {
+  display: flex;
+  flex-direction: column;
+  /* Ícones em coluna */
+  align-items: center;
+  gap: 20px;
+}
+
+/* ÍCONES SOCIAIS */
+.social {
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.social a i {
+  color: black;
+  transition: 0.2s ease;
+}
+
+.social a:hover i {
+  opacity: 0.8;
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #5893f3;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle i {
+  transition: 0.3s ease;
+}
+
+/* Rotaciona o ícone quando ativo */
+.menu-toggle.show i {
+  transform: rotate(90deg);
+}
+
+/* ==============================
+    MENU DE HAMBÚRGUER
+================================= */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 10px;
+  top: 140px;
+  background-color: #5893f3;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu ul.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
+.line {
+  border-bottom: 7px solid #5893f3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================
+    BANNER PRINCIPAL
+================================= */
+
+#info-dogs {
+  background-color: rgb(247 247 247);
+
+}
+
 #info-dogs {
   display: flex;
   padding: 20px 50px;
-  /*background-color: #ea9400;*/
-  /*background-image: url(../img/background_patas.png);*/
   height: 530px;
-  background-image: url(../img/Design\sem\nome\ \(2\).png);
   background-size: cover;
 }
 
-/* ==========
-    Foto principal
-============= */
-
+/* Slider */
 .container-slider {
   display: flex;
   width: 800px;
-  /*background-color: #c2e3df;*/
   height: 500px;
   align-items: center;
   justify-content: center;
@@ -45,80 +195,141 @@ a {
   padding-left: 40px;
 }
 
+.grid-detalhes {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 10px 25px;
+  margin-top: 15px;
+}
+
+.grid-detalhes div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.grid-detalhes div *:first-child {
+  color: #111111;
+}
+
+.grid-detalhes div *:last-child {
+  color: #555;
+}
+
+.detalhe-linha {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+.detalhe-categoria {
+  font-family: "Montserrat-bold";
+  display: inline-block;
+  text-align: left;
+  font-size: 15px;
+}
+
 .container-images {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 600px;
-  height: 370px;
+  max-width: 700px;
+  height: 470px;
   overflow: hidden;
-  padding: 20px 0px;
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
-.slider img {
-  width: 700px;
-  height: 300px;
-  margin: 0 2rem;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* ==========
-    DESCRIÇÃO
-============= */
-
 .bloco2 {
+  color: #333;
   padding-left: 50px;
   padding-top: 30px;
   width: 1000px;
 }
 
-.btn-forms {
-  background-color: #edce71;
-  border-radius: 10px;
-  padding: 10px;
-  width: 300px;
-  height: 20px;
-  border: none;
+.bloco2 h1 {
+  font-family: "vaseline-extra";
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.descricao-pet {
+  margin-bottom: 20px;
+}
+
+.fatos-essenciais h2 {
+  font-family: "Montserrat-bold";
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.detalhe-categoria {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.valor {
+  color: #333;
+}
+
+/* Botões */
+.linha-botao {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 25px;
+}
+
+/* ---- BOTÃO PRINCIPAL (Adoção - azul) ---- */
+.btn-adocao {
+  background-color: #5893f3;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  display: inline-block; /* ou block */
-  margin-top: 20px; /* adiciona espaço acima */
+  border: 2px solid #5893f3;
+  transition: 0.25s ease;
 }
 
-.tabela-container {
-  border-collapse: collapse;
+.btn-adocao:hover {
+  background-color: #fff;
+  color: #5893f3;
+  border-color: #5893f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 147, 243, 0.35);
 }
 
-table {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 90%;
+/* ---- BOTÃO SECUNDÁRIO (Apadrinhamento - outline) ---- */
+.btn-apadrinhamento {
+  background-color: #fff;
+  color: #5893f3;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #5893f3;
+  transition: 0.25s ease;
 }
 
-td,
-th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tr:hover {
-  background-color: #ddd;
-}
-
-th {
-  font-weight: normal;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  color: rgb(0, 0, 0);
+.btn-apadrinhamento:hover {
+  background-color: #5893f3;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 147, 243, 0.35);
 }
 
 /* ==============================
@@ -430,7 +641,11 @@ th {
   background-color: #636363;
 }
 
+/* ==============================
+   FOOTER
+================================= */
 footer {
+  padding: 40px 20px;
   background-color: #5893f3;
   padding: 20px 0;
   color: #fff;
@@ -438,60 +653,76 @@ footer {
 
 .footer-container {
   display: flex;
-  max-width: 1000px;
+  max-width: 1700px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 200px;
+  justify-content: space-between;
 }
 
-.footer-column {
-  flex: 1;
+.container-logos {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
-.footer-column .sociais-footer {
-  text-align: unset;
-  font-size: 30px;
-  gap: 20px;
+.sociais-footer {
+  text-align: end;
 }
 
-.footer-column .logo {
+.logo {
   max-width: 150px;
-}
-
-.footer-column h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.footer-column li {
-  list-style: none;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
-.footer-column ul li {
-  font-size: 15px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .sociais-footer a {
+  color: #fff;
+  font-size: 24px;
   margin-right: 10px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-footer a {
-  text-decoration: none;
-  color: #fff;
+  margin-left: 5px;
+  transition: color 0.3s ease;
 }
 
-footer a:hover {
+.sociais-footer a:hover {
+  color: #636363;
+}
+
+.footer-column h3,
+.coluna-contatos h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #636363;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.coluna-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-column ul {
+  line-height: 1.5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #636363;
   text-decoration: underline;
+}
+
+.coluna-contatos p {
+  line-height: 1.5;
 }

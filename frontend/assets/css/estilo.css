@@ -1,9 +1,10 @@
-/* ==============================
-   1. ESTILOS BASE E RESET
-================================= */
+* {
+  font-family: "Montserrat-Regular", sans-serif;  
+}
+
+
 body {
   margin: 0;
-  font-family: "Montserrat-Regular", sans-serif;
   font-size: 16px;
 }
 
@@ -12,11 +13,11 @@ a {
 }
 
 main {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(247 247 247);
 }
 
 /* ==============================
-   2. TOPO, BARRA E LOGO
+    TOPO E LOGO
 ================================= */
 .top-bar {
   background: #fff;
@@ -37,7 +38,7 @@ main {
 }
 
 /* ==============================
-   3. NOME E SLOGAN
+    NOME E SLOGAN
 ================================= */
 .name-slogan {
   text-align: center;
@@ -46,6 +47,7 @@ main {
 
 .name-slogan .name {
   font-family: "vaseline-extra";
+  /* Fonte personalizada */
   font-size: 55px;
   margin: 5px auto;
 }
@@ -57,15 +59,17 @@ main {
 }
 
 /* ==============================
-   4. COLUNA DIREITA (SOCIAL + MENU)
+    COLUNA DIREITA (Social + Hambúrguer)
 ================================= */
 .right-column-stack {
   display: flex;
   flex-direction: column;
+  /* Ícones em coluna */
   align-items: center;
   gap: 20px;
 }
 
+/* ÍCONES SOCIAIS */
 .social {
   font-size: 30px;
   display: flex;
@@ -81,6 +85,7 @@ main {
   opacity: 0.8;
 }
 
+/* BOTÃO HAMBÚRGUER */
 .menu-toggle {
   display: block;
   background: none;
@@ -95,18 +100,19 @@ main {
   transition: 0.3s ease;
 }
 
+/* Rotaciona o ícone quando ativo */
 .menu-toggle.show i {
   transform: rotate(90deg);
 }
 
 /* ==============================
-   5. MENU DE NAVEGAÇÃO
+    MENU DE HAMBÚRGUER
 ================================= */
 .menu {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 9;
+  z-index: 1;
 }
 
 .menu ul {
@@ -156,7 +162,7 @@ main {
 }
 
 /* ==============================
-   6. LINHA DIVISÓRIA
+    LINHA DIVISÓRIA
 ================================= */
 .line {
   border-bottom: 7px solid #5893f3;
@@ -164,13 +170,13 @@ main {
 }
 
 /* ==============================
-   7. SEÇÃO BANNER
+    BANNER
 ================================= */
 #banner {
   display: flex;
   background-image: url(../img/banner-numeros.png);
   background-attachment: fixed;
-  background-position: 10%  -70px;
+  background-position: 10% -70px;
   background-color: rgba(0, 0, 0, 0.329);
   background-blend-mode: multiply;
   height: 550px;
@@ -179,12 +185,11 @@ main {
   background-repeat: no-repeat;
 }
 
-
 #txt-banner {
   padding: 90px 90px;
   text-align: left;
   width: 35%;
-  color: #ececec;
+  color: #ffffff;
   float: left;
   font-family: "Montserrat-Regular", sans-serif;
   line-height: 25px;
@@ -229,7 +234,7 @@ main {
 }
 
 /* ==============================
-  SEÇÃO DE TEXTOS PRINCIPAIS
+   TEXTOS PRINCIPAIS
 ================================= */
 #banner-fundo {
   background-image: url("../img/background_patas.png");
@@ -248,19 +253,24 @@ main {
 #texto-primeiro h2 {
   font-family: "Montserrat-bold", sans-serif;
   font-size: 2rem;
+  margin-bottom: 40px;
 }
 
 #texto-primeiro p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+  color: #333333;
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* ==============================
-  GRID DE FOTOS 1 (BLOCO FOTOS)
+    GRID DE FOTOS 1
 ================================= */
 #bloco-fotos {
   border-radius: 10px;
-  margin-top: 20px;
   height: 610px;
   padding: 50px 60px;
   margin-bottom: 20px;
@@ -331,15 +341,13 @@ main {
 }
 
 /* ==============================
-  SEÇÃO ANIMAIS (GRID DE CARTÕES)
+    SEÇÃO ANIMAIS - ADOCAO
 ================================= */
 #animais {
   border-radius: 10px;
   margin-top: 20px;
-  background-color: #f7f7f7;
-  max-height: 1535px;
+  background-color: rgb(247 247 247);
   padding: 50px 60px;
-  margin-bottom: 20px;
 }
 
 #texto-segundo h2 {
@@ -348,7 +356,6 @@ main {
 }
 
 #texto-segundo {
-  background-color: #f7f7f7;
   height: 20px;
   padding: 20px 100px;
   margin-bottom: 20px;
@@ -362,9 +369,9 @@ main {
   margin-top: 50px;
 }
 
-/* ==============================
+/*
   CAIXA DE PESQUISA
-================================= */
+ */
 
 .div-pesquisa {
   margin-top: 30px;
@@ -408,9 +415,9 @@ main {
   font-size: 15px;
 }
 
-/* ==============================
+/* 
   CARDS DE ADOÇÃO
-================================= */
+ */
 
 .cartao {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.308);
@@ -458,7 +465,7 @@ a.btn-adotar {
   padding: 8px 14px;
   border-radius: 6px;
   color: #fff;
-  background-color: #6f7e93;
+  background-color: #5893f3;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -498,7 +505,7 @@ a.btn-adotar:hover {
   */
 
 /* ==============================
-   11. RODAPÉ (FOOTER)
+   FOOTER
 ================================= */
 footer {
   padding: 40px 20px;
