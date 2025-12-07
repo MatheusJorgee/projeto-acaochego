@@ -8,10 +8,6 @@ body {
   font-size: 16px;
 }
 
-a {
-  text-decoration: none;
-}
-
 main {
   background-color: rgb(247 247 247);
 }
@@ -504,9 +500,10 @@ a.btn-adotar:hover {
 }
   */
 
-/* ==============================
-   FOOTER
+/* ============================== 
+    FOOTER 
 ================================= */
+
 footer {
   padding: 40px 20px;
   background-color: #5893f3;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/css/index.css" />
+  <title>Acãochego</title>
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <img src="../assets/img/logo/logo-acaochego.png" alt="Logo Acãochego" class="logo" />
+
+        <div class="name-slogan">
+          <p class="name">ACÃOCHEGO</p>
+          <p class="slogan">
+            ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
+          </p>
+        </div>
+
+        <div class="right-column-stack">
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+
+          <button class="menu-toggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre-nos.html">A Acãochego</a></li>
+        <li><a href="form-adocao.html">Quero Adotar</a></li>
+        <li><a href="apadrinhamento.html">Quero Apadrinhar</a></li>
+        <li><a href="pages/">Preciso de Ajuda</a></li>
+        <li><a href="#">Matérias</a></li>
+        <li><a href="#">Finais Felizes</a></li>
+        <li><a href="#">Tributo</a></li>
+      </ul>
+    </nav>
+    <div class="line"></div>
+  </header>
+
+  <main>
+
+  </main>
+
+  <footer>
+    
+  </footer>
+
+  <script>
+    // ======= MENU ABRIR/FECHAR (JavaScript) =======
+    
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuList = document.querySelector(".menu ul");
+    const menuIcon = document.querySelector(".menu-toggle i");
+
+    menuToggle.addEventListener("click", () => {
+      // Alterna a visibilidade do Menu
+      menuList.classList.toggle("show");
+
+      // ADICIONA A CLASSE 'show' TAMBÉM NO BOTÃO (menuToggle) para a ANIMAÇÃO
+      menuToggle.classList.toggle("show");
+
+      // Alterna o ícone (Hamburger <-> X)
+      if (menuList.classList.contains("show")) {
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+      } else {
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+      }
+    });
+  </script>
+</body>
+
+</html>
