@@ -1,7 +1,7 @@
 <%@page language="java" import="java.sql.*" %>
 
 <%
-String database = "projeto";
+String database = "projeto1";
 String endereco = "jdbc:mysql://localhost:3306/" + database;
 String usuario  = "root";
 String senha    = "";

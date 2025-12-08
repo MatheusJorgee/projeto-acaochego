@@ -1,0 +1,160 @@
+ body {
+  margin: 0;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 16px;
+}
+
+
+.top-bar {
+    background: #fff;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 150px;
+    margin-left: 20px;
+}        
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
+.name-slogan {
+    text-align: center;
+    margin-right: 140px;
+    color: #5893f3;
+}
+
+.name-slogan .name {
+    font-family: "vaseline-extra";
+    /* Fonte personalizada */
+    font-size: 55px;
+    margin: 5px auto;
+}
+
+.name-slogan .slogan {
+    font-family: "Montserrat-bold", sans-serif;
+    font-size: 18px;
+    margin-top: 0;
+}
+   
+        h1 {
+            margin-top: 150px;
+            font-size: 45px;
+            color: #5aa0ff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+         h2 {
+            margin-top: 130px;
+            font-size: 45px;
+            color: #5aa0ff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+          .btn-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          gap: 50px;
+          margin-top: 40px;
+      }
+
+        
+
+        /* Botões da pagina de alterar*/
+        form {
+            display: flex;
+            flex-direction: column; /* coloca input e botão um abaixo do outro */
+            align-items: center;    /* centraliza horizontalmente */
+            gap: 20px;              /* espaço entre input e botão */
+            max-width: 900px; /* Igual à largura máxima do .grupo-cx */
+            margin: 0 auto;
+        }
+
+form input[type="text"] {
+    width: 600px; /* mesmo tamanho da imagem */
+    padding: 15px 25px;
+    border: 2px solid #5893f3;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+/* Botão */
+form button {
+    background-color: #5893f3;
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background-color: #5aa0ff;
+    transform: scale(1.06);
+}
+
+
+/* ======================================================================
+        Caixa de texto formulario de Cadastro de um novo animal
+========================================================================*/
+/* GRID PRINCIPAL */
+.grupo-cx {
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;
+    width: 100%;
+    margin-right:400px;
+}
+
+.caixa{
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa label {
+    font-size: 20px;
+    padding-bottom: 10px; 
+    font-family: 'Montserrat-bold';
+}
+
+
+
+/* ======================================================================
+      BOTÃO DA PAGINA DE CADASTRO DE ANIMAIS 
+========================================================================*/
+.btn-container2 {
+    grid-column: span 2; /* ocupa largura total do grid */
+    display: flex;
+    justify-content: center; /* botão centralizado */
+    margin-top: 20px;
+}
+
+.btn-container2 button {
+    background: #5893f3;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn-container2 button:hover {
+    background: #5aa0ff;
+    transform: scale(1.07);
+}
