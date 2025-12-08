@@ -8,10 +8,10 @@ const cachorros = {
         local: "São Paulo - SP",
 
         imagens: [
-            "./assets/img/Nanda/Nanda1.jpg",
-            "./assets/img/Nanda/Nanda2.jpg",
-            "./assets/img/Nanda/Nanda3.jpg",
-            "./assets/img/Nanda/Nanda4.jpg",
+            "../assets/img/Nanda/Nanda1.jpg",
+            "../assets/img/Nanda/Nanda2.jpg",
+            "../assets/img/Nanda/Nanda3.jpg",
+            "../assets/img/Nanda/Nanda4.jpg",
         ],
 
         caracteristicas: [
@@ -31,10 +31,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Carminha/carminhacaixa2.jpg",
-            "./assets/img/Carminha/carminha2.jpg",
-            "./assets/img/Carminha/carminha3.jpg",
-            "./assets/img/Carminha/carminha4.jpg",
+            "../assets/img/Carminha/carminhacaixa2.jpg",
+            "../assets/img/Carminha/carminha2.jpg",
+            "../assets/img/Carminha/carminha3.jpg",
+            "../assets/img/Carminha/carminha4.jpg",
         ],
 
         caracteristicas: [
@@ -79,8 +79,8 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Cora/coracaixa3.jpg",
-            "./assets/img/Cora/cora2.jpg"
+            "../assets/img/Cora/coracaixa3.jpg",
+            "../assets/img/Cora/cora2.jpg"
         ],
 
         caracteristicas: [
@@ -101,10 +101,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Bono/bonocaixa4.jpg",
-            "./assets/img/Bono/bono2.jpg",
-            "./assets/img/Bono/bono3.jpg",
-            "./assets/img/Bono/bono4.jpg",
+            "../assets/img/Bono/bonocaixa4.jpg",
+            "../assets/img/Bono/bono2.jpg",
+            "../assets/img/Bono/bono3.jpg",
+            "../assets/img/Bono/bono4.jpg",
         ],
 
         caracteristicas: [
@@ -125,10 +125,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Pituca/filhotecaixa5.jpg",
-            "./assets/img/Pituca/filhote_pituca2.jpg",
-            "./assets/img/Pituca/filhote_pituca3.jpg",
-            "./assets/img/Pituca/filhote_pituca4.jpg",
+            "../assets/img/Pituca/filhotecaixa5.jpg",
+            "../assets/img/Pituca/filhote_pituca2.jpg",
+            "../assets/img/Pituca/filhote_pituca3.jpg",
+            "../assets/img/Pituca/filhote_pituca4.jpg",
         ],
 
         caracteristicas: [
@@ -148,10 +148,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Roni/filhote_caixa6.jpg",
-            "./assets/img/Roni/roni2.jpg",
-            "./assets/img/Roni/roni3.jpg",
-            "./assets/img/Roni/roni4.jpg",
+            "../assets/img/Roni/filhote_caixa6.jpg",
+            "../assets/img/Roni/roni2.jpg",
+            "../assets/img/Roni/roni3.jpg",
+            "../assets/img/Roni/roni4.jpg",
         ],
 
         caracteristicas: [
@@ -172,10 +172,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Tony/filhotecaixa7.jpg",
-            "./assets/img/Tony/tony2.jpg",
-            "./assets/img/Tony/tony3.jpg",
-            "./assets/img/Tony/tony4.jpg",
+            "../assets/img/Tony/filhotecaixa7.jpg",
+            "../assets/img/Tony/tony2.jpg",
+            "../assets/img/Tony/tony3.jpg",
+            "../assets/img/Tony/tony4.jpg",
         ],
 
         caracteristicas: [
@@ -196,9 +196,9 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Chocolate/chocolate1.jpg",
-            "./assets/img/Chocolate/chocolate2.jpg", 
-            "./assets/img/Chocolate/chocolate3.jpg"
+            "../assets/img/Chocolate/chocolate1.jpg",
+            "../assets/img/Chocolate/chocolate2.jpg", 
+            "../assets/img/Chocolate/chocolate3.jpg"
         ],
 
         caracteristicas: [
@@ -219,9 +219,9 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Bruna/brunacaixa9.jpg",
-            "./assets/img/Bruna/bruna2.jpg",
-            "./assets/img/Bruna/bruna3.jpg",
+            "../assets/img/Bruna/brunacaixa9.jpg",
+            "../assets/img/Bruna/bruna2.jpg",
+            "../assets/img/Bruna/bruna3.jpg",
         ],
 
         caracteristicas: [
@@ -242,7 +242,7 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-            "./assets/img/Caramelo/caramelo2.jpg",
+            "../assets/img/Caramelo/caramelo2.jpg",
         ],
 
         caracteristicas: [
@@ -261,10 +261,10 @@ const cachorros = {
         local: "São Paulo - SP",
 
         imagens: [
-            "./assets/img/Mel/melcaixa11.jpg",
-            "./assets/img/Mel/mel3.jpg",
-            "./assets/img/Mel/mel4.jpg",
-            "./assets/img/Mel/mel5.jpg"
+            "../assets/img/Mel/melcaixa11.jpg",
+            "../assets/img/Mel/mel3.jpg",
+            "../assets/img/Mel/mel4.jpg",
+            "../assets/img/Mel/mel5.jpg"
         ],
 
         caracteristicas: [
@@ -284,10 +284,10 @@ const cachorros = {
         subtitle: "",
 
         imagens: [
-           "./assets/img/Brown/browncaixa12.jpg",
-            "./assets/img/Brown/brown2.jpg",
-            "./assets/img/Brown/brown3.jpg",
-            "./assets/img/Brown/brown4.jpg",
+           "../assets/img/Brown/browncaixa12.jpg",
+            "../assets/img/Brown/brown2.jpg",
+            "../assets/img/Brown/brown3.jpg",
+            "../assets/img/Brown/brown4.jpg",
         ],
          
         caracteristicas: [
