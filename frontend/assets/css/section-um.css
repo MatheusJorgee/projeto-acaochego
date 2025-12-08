@@ -1,7 +1,5 @@
-
-
 * {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat Regular", sans-serif;
 }
 
 body {
@@ -65,7 +63,7 @@ body {
 }
 
 .name-slogan .slogan {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 1rem;
   margin-top: 8px;
   color: #5a6473;
@@ -423,7 +421,7 @@ body {
 }
 
 .cartao-acao h3 {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 18px;
@@ -505,7 +503,7 @@ body {
 
 /* Título */
 .container-sobre-texto h1 {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 3.5rem;
   font-weight: 900;
   color: #2c3e50;
@@ -514,7 +512,7 @@ body {
 }
 
 .container-sobre-texto .destaque {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   color: #5893f3;
   position: relative;
   display: inline-block;
@@ -590,7 +588,7 @@ body {
 
 #texto-segundo h2 {
   margin-top: 10px;
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 50px;
@@ -682,7 +680,7 @@ a.btn-adotar:hover {
 
 .btn-conheca {
   display: inline-block;
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 16px;
   font-weight: 600;
   padding: 14px 32px;
@@ -730,7 +728,7 @@ a.btn-adotar:hover {
 }
 
 .img-nossos-numeros h3 {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 2rem;
   margin-bottom: 30px;
 }
@@ -742,7 +740,7 @@ a.btn-adotar:hover {
 }
 
 .dados-numeros {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -751,7 +749,7 @@ a.btn-adotar:hover {
 }
 
 .dados-numeros p {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 3.5rem;
   flex-basis: 30%;
   margin: 10px;
@@ -785,7 +783,7 @@ a.btn-adotar:hover {
 .txt-patrocinios h3 {
   color: #636363;
   font-weight: bold;
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 2rem;
   margin-bottom: 30px;
   text-align: center;
@@ -919,7 +917,7 @@ footer {
 
 .footer-column h3,
 .coluna-contatos h3 {
-  font-family: "Montserrat-Medium";
+  font-family: "Montserrat Medium";
   font-size: 18px;
   margin-bottom: 20px;
   border-bottom: 2px solid #636363;

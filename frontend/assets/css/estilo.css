@@ -1,7 +1,7 @@
 
 
 * {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat Regular", sans-serif;
 }
 
 body {
@@ -69,7 +69,7 @@ main {
 }
 
 .name-slogan .slogan {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 1rem;
   margin-top: 8px;
   color: #5a6473;
@@ -239,12 +239,12 @@ main {
   width: 35%;
   color: #ffffff;
   float: left;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat Regular", sans-serif;
   line-height: 25px;
 }
 
 #txt-banner h2 {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat Bold";
   font-size: 2.5rem;
 }
 
@@ -299,7 +299,7 @@ main {
 }
 
 #texto-primeiro h2 {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 2rem;
   margin-bottom: 40px;
 }
@@ -399,7 +399,7 @@ main {
 }
 
 #texto-segundo h2 {
-  font-family: "Montserrat-bold", sans-serif;
+  font-family: "Montserrat Bold", sans-serif;
   font-size: 2rem;
 }
 
@@ -600,7 +600,7 @@ footer {
 
 .footer-column h3,
 .coluna-contatos h3 {
-  font-family: "Montserrat-Medium";
+  font-family: "Montserrat Medium";
   font-size: 18px;
   margin-bottom: 20px;
   border-bottom: 2px solid #636363;

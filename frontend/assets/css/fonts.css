@@ -1,18 +1,30 @@
-@import url('https://fonts.cdnfonts.com/css/vaseline-extra');
-
+@import url("https://fonts.cdnfonts.com/css/vaseline-extra");
+@import url(https://db.onlinewebfonts.com/c/0462590be6674a5827956be5045c54de?family=Montserrat+Regular);
+@import url(https://db.onlinewebfonts.com/c/07eae3dd22b2a99864228b51f4f918a5?family=Montserrat+Bold);
+@import url(https://db.onlinewebfonts.com/c/01c2d48a8d3bbd9730fccb2354765d43?family=Montserrat+Medium);
 @font-face {
-  font-family: "vaseline-extra"; 
+  font-family: "vaseline-extra";
   src: local("Vaseline Extra");
 }
 
 @font-face {
-  font-family: "Montserrat-regular";
-  src: url(/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: "Montserrat Regular";
+  src: local("montserrat-regular");
 }
 
 @font-face {
-  font-family: "Montserrat-bold";
-  src: url(/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf);
+  font-family: "Montserrat Bold";
+  src: url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.eot");
+  src: url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/07eae3dd22b2a99864228b51f4f918a5.svg#Montserrat Bold")
+      format("svg");
 }
 
 @font-face {
