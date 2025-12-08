@@ -28,9 +28,9 @@
         if (rs.next()) {
             // Login OK
             session.setAttribute("usuario", vlogin);
-            response.sendRedirect("menu_animais.jsp");
+            response.sendRedirect(request.getContextPath() + "/formularios/Cadas_ani/menu_animais.jsp");
         } else {
-            out.print("<script>alert('Login ou senha incorretos!');</script>");
+            out.print("<script>alert('Login ou senha incorretos!'); window.location='login.html';</script>");
         }
 
         conexao.close();

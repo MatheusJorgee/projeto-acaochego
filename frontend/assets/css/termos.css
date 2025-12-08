@@ -1,0 +1,98 @@
+/* Reset básico */
+    body, h1, h2, p {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Estilo do modal */
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+
+    .modal h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .modal h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #444;
+    }
+
+      .modal h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    .modal p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .modal li{
+        font-size: 14px;
+        color: #555;
+    }
+
+    .modal .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .modal button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .modal button.cancel {
+        background-color: #f5f5f5;
+        color: #666;
+        text-decoration: none;
+    }
+
+    .modal button.accept {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Botões desativados */
+    .modal button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    /* Fundo de escurecimento */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
