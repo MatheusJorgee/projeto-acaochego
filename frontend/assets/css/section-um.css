@@ -1,3 +1,5 @@
+
+
 * {
   font-family: "Montserrat-Regular", sans-serif;
 }
@@ -54,7 +56,7 @@ body {
 }
 
 .name-slogan .name {
-  font-family: "vaseline-extra", sans-serif;
+  font-family: "Vaseline Extra", sans-serif;
   font-size: 3.5rem;
   margin: 5px auto;
   letter-spacing: 2px;
@@ -248,7 +250,7 @@ body {
 }
 
 .hero-title {
-  font-family: "vaseline-extra", sans-serif;
+  font-family: "Vaseline Extra", sans-serif;
   margin-top: 0;
   font-size: 4.5rem;
   letter-spacing: 2px;

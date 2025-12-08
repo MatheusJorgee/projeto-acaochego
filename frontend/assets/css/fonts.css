@@ -1,22 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/vaseline-extra');
+
 @font-face {
-    font-family: "vaseline-extra";
-    src: url(/frontend/assets/fonts/Vaseline\ Extra.ttf);
+  font-family: "vaseline-extra"; 
+  src: local("Vaseline Extra");
 }
 
 @font-face {
-    font-family: "Montserrat-regular";
-    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: "Montserrat-regular";
+  src: url(/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Montserrat-bold";
-    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf);
+  font-family: "Montserrat-bold";
+  src: url(/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf);
 }
-
 
 @font-face {
-    font-family: "Montserrat-Medium";
-    src: url(/frontend/assets/fonts/Montserrat/Montserrat-Medium.ttf);
+  font-family: "Montserrat-Medium";
+  src: url(/frontend/assets/fonts/Montserrat/Montserrat-Medium.ttf);
 }
-
-/* Existem muitas fontes nas pastas, precisamos escolher qual usar e otimizar essa quantidade */ 
