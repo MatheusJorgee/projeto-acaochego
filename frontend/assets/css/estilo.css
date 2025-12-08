@@ -249,8 +249,10 @@ main {
 }
 
 #txt-banner p {
+  color: #e2e2e2;
   margin-top: -5px;
   font-size: 18px;
+  font-weight: 50;
 }
 
 .btn-banner {
