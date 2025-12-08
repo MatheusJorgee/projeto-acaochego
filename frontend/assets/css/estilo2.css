@@ -14,91 +14,126 @@ a {
 main {
   background-color: rgb(247 247 247);
 }
-
-/* ============================== 
-    HEADER 
+/* ==============================
+    TOPO E LOGO
 ================================= */
-
 .top-bar {
-  background: #fff;
+  background: #fafafa;
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.top-bar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-  padding: 10px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  max-height: 150px;
-  margin-left: 20px;
+  cursor: pointer;
+  max-height: 120px;
+  transition: transform 0.3s ease;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
 .name-slogan {
   text-align: center;
   color: #5893f3;
+  flex: 1;
+  padding: 0 20px;
 }
 
 .name-slogan .name {
-  font-family: "vaseline-extra";
-  font-size: 55px;
+  font-family: "vaseline-extra", sans-serif;
+  font-size: 3.5rem;
   margin: 5px auto;
+  letter-spacing: 2px;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .name-slogan .slogan {
   font-family: "Montserrat-bold", sans-serif;
-  font-size: 18px;
-  margin-top: 0;
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #5a6473;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-
+/* ==============================
+    COLUNA DIREITA (Social + Hambúrguer)
+================================= */
 .right-column-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.social {
-  font-size: 30px;
-  display: flex;
-  gap: 10px;
-}
-
-.social a i {
-  color: black;
-  transition: 0.2s ease;
-}
-
-.social a:hover i {
-  opacity: 0.8;
-}
-
+/* BOTÃO HAMBÚRGUER */
 .menu-toggle {
-  display: block;
-  background: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
   border: none;
-  font-size: 30px;
-  color: #5893f3;
+  border-radius: 12px;
+  color: white;
   cursor: pointer;
   padding: 0;
+  box-shadow: 0 4px 15px rgba(88, 147, 243, 0.3);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 147, 243, 0.4);
+}
+
+.menu-toggle:active {
+  transform: translateY(0);
 }
 
 .menu-toggle i {
-  transition: 0.3s ease;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.show {
+  background: #5a6473;
 }
 
 .menu-toggle.show i {
   transform: rotate(90deg);
 }
 
+/* ==============================
+    MENU DE HAMBÚRGUER
+================================= */
 .menu {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 9;
 }
 
 .menu ul {
@@ -106,50 +141,81 @@ main {
   padding: 0;
   margin: 0;
   position: absolute;
-  right: 10px;
-  top: 140px;
-  background-color: #5893f3;
-  width: 200px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex-direction: column;
+  right: 140px;
+  top: 192px;
+  background: #fafafa;
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  border: 2px solid #f0f0f0;
 }
 
 .menu ul.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .menu ul li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.menu ul li:hover {
+  background-color: #f8f9fa;
 }
 
 .menu ul li a {
   display: block;
-  color: white;
+  color: #333;
   text-decoration: none;
-  padding: 10px;
-  text-align: center;
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 45px;
+}
+
+.menu ul li a::before {
+  content: "→";
+  position: absolute;
+  left: 20px;
+  color: #5893f3;
   font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
 }
 
 .menu ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #5893f3;
+  padding-left: 50px;
+}
+
+.menu ul li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .menu ul li:last-child {
   border-bottom: none;
 }
 
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
 .line {
-  border-bottom: 7px solid #5893f3;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  height: 5px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  box-shadow: 0 2px 10px rgba(88, 147, 243, 0.3);
 }
 
 /* ============================== 
@@ -407,7 +473,7 @@ main {
 .div-cartoes {
   background-color: #8fb4f3;
   padding: 60px 20px 70px;
-  min-height: 500px ;
+  min-height: 500px;
 }
 
 .txt-titulos div {
@@ -465,7 +531,6 @@ main {
   align-items: center;
   width: 100%;
 }
-
 
 .cartao h3 {
   font-family: "Montserrat-bold", sans-serif;
@@ -672,8 +737,6 @@ footer {
 .coluna-contatos p {
   line-height: 1.5;
 }
-
-
 
 /* ============================== 
     EXTRAS 
