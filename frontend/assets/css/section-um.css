@@ -1,6 +1,9 @@
+* {
+  font-family: "Montserrat-Regular", sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: "Montserrat-Regular", sans-serif;
   font-size: 16px;
 }
 
@@ -8,21 +11,36 @@ body {
     TOPO E LOGO
 ================================= */
 .top-bar {
-  background: #fff;
+  background: #fafafa;
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.top-bar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-  padding: 10px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  max-height: 150px;
-  margin-left: 20px;
+  cursor: pointer;
+  max-height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 /* ==============================
@@ -31,64 +49,72 @@ body {
 .name-slogan {
   text-align: center;
   color: #5893f3;
+  flex: 1;
+  padding: 0 20px;
 }
 
 .name-slogan .name {
-  font-family: "vaseline-extra";
-  /* Fonte personalizada */
-  font-size: 55px;
+  font-family: "vaseline-extra", sans-serif;
+  font-size: 3.5rem;
   margin: 5px auto;
+  letter-spacing: 2px;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .name-slogan .slogan {
   font-family: "Montserrat-bold", sans-serif;
-  font-size: 18px;
-  margin-top: 0;
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #5a6473;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-
 /* ==============================
     COLUNA DIREITA (Social + Hambúrguer)
 ================================= */
 .right-column-stack {
   display: flex;
   flex-direction: column;
-  /* Ícones em coluna */
   align-items: center;
-  gap: 20px;
-}
-
-/* ÍCONES SOCIAIS */
-.social {
-  font-size: 30px;
-  display: flex;
-  gap: 10px;
-}
-
-.social a i {
-  color: black;
-  transition: 0.2s ease;
-}
-
-.social a:hover i {
-  opacity: 0.8;
+  gap: 15px;
 }
 
 /* BOTÃO HAMBÚRGUER */
 .menu-toggle {
-  display: block;
-  background: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
   border: none;
-  font-size: 30px;
-  color: #5893f3;
+  border-radius: 12px;
+  color: white;
   cursor: pointer;
   padding: 0;
+  box-shadow: 0 4px 15px rgba(88, 147, 243, 0.3);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 147, 243, 0.4);
+}
+
+.menu-toggle:active {
+  transform: translateY(0);
 }
 
 .menu-toggle i {
-  transition: 0.3s ease;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-/* Rotaciona o ícone quando ativo */
+.menu-toggle.show {
+  background: #5a6473;
+}
+
 .menu-toggle.show i {
   transform: rotate(90deg);
 }
@@ -100,7 +126,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 90;
+  z-index: 9;
 }
 
 .menu ul {
@@ -108,41 +134,68 @@ body {
   padding: 0;
   margin: 0;
   position: absolute;
-  right: 10px;
-  top: 140px;
-  background-color: #5893f3;
-  width: 200px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex-direction: column;
+  right: 160px;
+  top: 192px;
+  background: #fafafa;
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  border: 2px solid #f0f0f0;
 }
 
 .menu ul.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .menu ul li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.menu ul li:hover {
+  background-color: #f8f9fa;
 }
 
 .menu ul li a {
   display: block;
-  color: white;
+  color: #333;
   text-decoration: none;
-  padding: 10px;
-  text-align: center;
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 45px;
+}
+
+.menu ul li a::before {
+  content: "→";
+  position: absolute;
+  left: 20px;
+  color: #5893f3;
   font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
 }
 
 .menu ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #5893f3;
+  padding-left: 50px;
+}
+
+.menu ul li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .menu ul li:last-child {
@@ -153,119 +206,255 @@ body {
     LINHA DIVISÓRIA
 ================================= */
 .line {
-  border-bottom: 7px solid #5893f3;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  height: 5px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  box-shadow: 0 2px 10px rgba(88, 147, 243, 0.3);
 }
 
 /* ==============================
-    BANNER PRINCIPAL
+    HERO BANNER
 ================================= */
-.imagem-banner {
-  width: 100%;
-  max-height: 550px;
-  overflow: hidden;
-  display: block;
-  padding: 0;
-  margin: 0;
+
+.hero-banner {
   position: relative;
+  width: 100%;
+  height: 700px;
+  background-image: url("../img/Banner_Cachorro_2.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.61);
+  background-blend-mode: multiply;
 }
 
-.imagem-banner img {
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  transform: translateY(-30%);
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-family: "vaseline-extra", sans-serif;
+  margin-top: 0;
+  font-size: 4.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: fadeInUp 1s ease 0.4s backwards;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #fafafa;
+  color: #5893f3;
+  border: 3px solid #fafafa;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #fafafa;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animações */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==============================
     CARTÕES DE ADOÇÃO
 ================================= */
-.cartao {
-  cursor: default;
-  height: 340px;
-  background-color: #5893f3ea;
-  color: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  flex: 1 1 300px;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: transform 0.7s ease, box-shadow 0.7s ease;
-}
-.cartao:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-}
-.conteudo-superior {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.cartao h3 {
-  font-family: "Montserrat-bold", sans-serif;
-  font-size: 1.6rem;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.cartao i {
-  font-size: 50px;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.cartao p {
-  font-weight: bold;
-  font-size: 14.5px;
-  margin-bottom: 0;
-}
-
-.botao-saiba-mais {
-  color: white;
-  border: 2px solid white;
-  text-decoration: none;
-  padding: 10px 25px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
-  margin-top: auto;
-  align-self: center;
-}
-
-.botao-saiba-mais:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ==============================
-    POSICIONAMENTO DOS CARTÕES
-================================= */
-.banner-acoes-agrupadas {
-  position: relative;
-  width: 100%;
-  margin-bottom: 150px;
-}
-
-.acoes-container {
-  position: absolute;
-  bottom: -350px;
-  left: 50%;
-  transform: translateX(-50%);
+.acoes-rapidas {
   display: flex;
   justify-content: center;
-  gap: 100px;
-  width: 100%;
+  gap: 40px;
   max-width: 1300px;
-  z-index: 10;
+  margin: -80px auto 100px;
   padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.cartao-acao {
+  cursor: pointer;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  padding: 30px 35px 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(88, 147, 243, 0.4);
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.cartao-acao::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fafafa;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.cartao-acao:hover::before {
+  opacity: 1;
+}
+
+.cartao-acao > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cartao-acao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 60px rgba(88, 147, 243, 0.5);
+}
+
+.cartao-acao h3,
+.cartao-acao p {
+  color: white;
+  transition: color 0.4s ease;
+}
+
+.cartao-acao:hover h3 {
+  color: #333;
+}
+
+.cartao-acao:hover p {
+  color: #666;
+}
+
+.icon-wrapper {
+  width: 120px;
+  height: 120px;
+  background: #fafafa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-acao:hover .icon-wrapper {
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  transform: scale(1.1);
+}
+
+.cartao-acao i {
+  font-size: 3.5rem;
+  color: #5893f3;
+  transition: color 0.4s ease;
+}
+
+.cartao-acao:hover i {
+  color: white;
+}
+
+.cartao-acao h3 {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.cartao-acao p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  flex: 1;
+}
+
+.btn-acao {
+  background: #fafafa;
+  color: #5893f3;
+  border: 2px solid #fafafa;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cartao-acao:hover .btn-acao {
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  color: white;
+  border-color: #5893f3;
+}
+
+.btn-acao:hover {
+  transform: scale(1.08);
 }
 
 /* ==============================
@@ -280,7 +469,7 @@ body {
   background-size: contain;
   background-repeat: repeat;
   background-position: center center;
-  margin-top: 450px;
+  margin-top: 50px;
   margin-bottom: 70px;
   height: 80px;
   width: 100%;
@@ -289,60 +478,234 @@ body {
 /* ==============================
     TEXTOS DE CONTEÚDO
 ================================= */
-.container-textos {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1150px;
-  padding-bottom: 10px;
-  text-align: center;
+.container-sobre-texto {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 60px 50px;
+  background: #fafafa;
+  border-radius: 30px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
 }
 
-.container-textos h1 {
-  letter-spacing: 2px;
+/* Tag superior */
+.tag-superior {
+  display: inline-block;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Título */
+.container-sobre-texto h1 {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.container-sobre-texto .destaque {
+  font-family: "Montserrat-bold", sans-serif;
   color: #5893f3;
-  font-size: 50px;
-  font-family: "vaseline-extra";
-  padding-bottom: -10px;
+  position: relative;
+  display: inline-block;
 }
 
-.container-textos p {
-  font-size: 18px;
-  margin-bottom: 60px;
+/* AQUI ESTAVA FALTANDO - Sublinhado decorativo */
+.container-sobre-texto .destaque::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: rgba(88, 147, 243, 0.2);
+  z-index: -1;
+  border-radius: 3px;
+}
+
+/* Texto introdutório */
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #353535;
+  margin-bottom: 35px;
+  font-weight: 700;
+}
+
+/* Parágrafos normais */
+.container-sobre-texto p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #666;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+/* Caixa de citação */
+.quote-box {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-left: 5px solid #5893f3;
+  padding: 30px 35px;
+  margin: 40px 0;
+  border-radius: 12px;
+  font-style: italic;
+  color: #555;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  position: relative;
+}
+
+.quote-box::before {
+  content: '"';
+  font-size: 5rem;
+  color: #5893f3;
+  opacity: 0.2;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 /* ==============================
     Animais para adoção
 ================================= */
 
-.animais-adocao {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 40px;
-  justify-items: center; 
-  align-items: center; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 20px;
+#animais {
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: rgb(247 247 247);
+  padding: 50px 60px;
 }
 
-.animais-adocao h1{
-  text-align: center;
-  font-family: "Montserrat-bold";
+#texto-segundo h2 {
+  margin-top: 10px;
+  font-family: "Montserrat-bold", sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 30px;
-  grid-column: 1 / -1; 
+  color: #333;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.animais-adocao img {
-  width: 100%; 
-  height: auto; 
+#texto-segundo {
+  height: 20px;
+  padding: 20px 100px;
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.line-texto {
+  border-bottom: 3px solid #5893f3;
+  width: 100px;
+  margin: 30px auto 50px;
+  border-radius: 2px;
+}
+
+/* 
+  CARDS DE ADOÇÃO
+ */
+
+.cartao {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.308);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.item2 {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.item2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.item2 img {
+  width: 100%;
+  height: 260px;
   object-fit: cover;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  display: block;
 }
 
+.item2 .descricao {
+  text-align: center;
+  margin: 10px auto 10px;
+  font-size: 16px;
+  color: #292929;
+}
 
+a.btn-adotar {
+  font-size: 15px;
+  margin: 10px auto 18px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #5893f3;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
+a.btn-adotar:hover {
+  background-color: #5a6473;
+}
+
+/* Botão Conheça Nossos Amigos */
+.container-btn-conheca {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-conheca {
+  display: inline-block;
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #5893f3;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(88, 147, 243, 0.3);
+}
+
+.btn-conheca:hover {
+  background-color: #5a6473;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(88, 147, 243, 0.4);
+}
+
+.texto-cta {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #5a6473;
+  margin-bottom: 20px;
+  text-align: center;
+}
 /* ==============================
     NOSSOS NÚMEROS
 ================================= */
@@ -444,7 +807,6 @@ body {
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
-  background-color: #ffffff;
   padding: 70px 0;
   display: flex;
 
@@ -455,8 +817,6 @@ body {
     rgba(0, 0, 0, 3) 90%,
     rgba(0, 0, 0, 0) 100%
   );
-  /* Para maior compatibilidade */
-
 }
 
 .logos-slide {
@@ -494,7 +854,7 @@ body {
   cursor: pointer;
   background-color: #5893f3;
   color: white;
-  border: 2px solid white;
+  border: 2px solid #fafafa;
   text-decoration: none;
   padding: 10px 25px;
   border-radius: 5px;
@@ -521,86 +881,77 @@ footer {
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    max-width: 1600px; 
-    margin: 0 auto; 
-    gap: 80px;
-}
-
-.container-logos, 
-.footer-column, 
-.coluna-contatos {
-    min-width: 250px; 
-
+  display: flex;
+  max-width: 1700px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .container-logos {
-    max-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: END; 
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
-.container-logos a
-.footer-column .logo{
-max-width: 150px;
+.sociais-footer {
+  text-align: end;
 }
 
 .logo {
-    max-width: 150px;
-    margin-bottom: 15px;
+  max-width: 150px;
+  margin-bottom: 15px;
 }
 
 .sociais-footer a {
-    color: #fff;
-    font-size: 24px;
-    margin-right: 15px;
-    transition: color 0.3s ease; 
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-left: 5px;
+  transition: color 0.3s ease;
 }
 
 .sociais-footer a:hover {
-    color: #636363; 
+  color: #636363;
 }
 
-.footer-column h3, 
+.footer-column h3,
 .coluna-contatos h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #636363; 
-    padding-bottom: 5px;
-    display: inline-block;
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #636363;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 .coluna-links {
-    display: flex; 
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  line-height: 1.5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-column li {
-    margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer-column a {
-    color: #ff0000;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-column a:hover {
-    color: #636363; 
-    text-decoration: underline;
+  color: #636363;
+  text-decoration: underline;
 }
 
-/* Coluna de Contatos */
 .coluna-contatos p {
-    margin-bottom: 10px;
-    line-height: 1.5; 
+  line-height: 1.5;
 }

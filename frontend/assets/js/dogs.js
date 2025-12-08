@@ -7,8 +7,6 @@ const cachorros = {
         sexo: "Fêmea",
         local: "São Paulo - SP",
 
-        subtitle: "(Ex Filhote Caixa 8)",
-
         imagens: [
             "./assets/img/Nanda/Nanda1.jpg",
             "./assets/img/Nanda/Nanda2.jpg",
@@ -224,7 +222,6 @@ const cachorros = {
             "./assets/img/Bruna/brunacaixa9.jpg",
             "./assets/img/Bruna/bruna2.jpg",
             "./assets/img/Bruna/bruna3.jpg",
-            "./assets/img/Bruna/bruna4.jpg",
         ],
 
         caracteristicas: [
@@ -246,7 +243,6 @@ const cachorros = {
 
         imagens: [
             "./assets/img/Caramelo/caramelo2.jpg",
-            "./assets/img/Caramelo/caramelocaixa10.jpg"
         ],
 
         caracteristicas: [
@@ -263,8 +259,6 @@ const cachorros = {
         porte: "Médio",
         sexo: "Fêmea",
         local: "São Paulo - SP",
-
-        subtitle: "(Ex FILHOTE 1 DO FERRO VELHO)",
 
         imagens: [
             "./assets/img/Mel/melcaixa11.jpg",

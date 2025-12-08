@@ -1,349 +1,583 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+  font-family: "Montserrat-Regular", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }
 
 main {
-    background-color: rgb(241, 241, 241);
-    height: 2050px;
+  background-color: rgb(247 247 247);
+}
+/* ==============================
+    TOPO E LOGO
+================================= */
+.top-bar {
+  background: #fafafa;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
 }
 
-.perfil {
-    display: none;
-}
-.perfil.ativo {
-    display: block;
+.top-bar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-a{
-    text-decoration: none;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.logo {
+  cursor: pointer;
+  max-height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+    NOME E SLOGAN
+================================= */
+.name-slogan {
+  text-align: center;
+  color: #5893f3;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.name-slogan .name {
+  font-family: "vaseline-extra", sans-serif;
+  font-size: 3.5rem;
+  margin: 5px auto;
+  letter-spacing: 2px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.name-slogan .slogan {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #5a6473;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+/* ==============================
+    COLUNA DIREITA (Social + Hambúrguer)
+================================= */
+.right-column-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 4px 15px rgba(88, 147, 243, 0.3);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 147, 243, 0.4);
+}
+
+.menu-toggle:active {
+  transform: translateY(0);
+}
+
+.menu-toggle i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.show {
+  background: #5a6473;
+}
+
+.menu-toggle.show i {
+  transform: rotate(90deg);
+}
+
+/* ==============================
+    MENU DE HAMBÚRGUER
+================================= */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 140px;
+  top: 192px;
+  background: #fafafa;
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  border: 2px solid #f0f0f0;
+}
+
+.menu ul.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul li {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.menu ul li:hover {
+  background-color: #f8f9fa;
+}
+
+.menu ul li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 45px;
+}
+
+.menu ul li a::before {
+  content: "→";
+  position: absolute;
+  left: 20px;
+  color: #5893f3;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+
+.menu ul li a:hover {
+  color: #5893f3;
+  padding-left: 50px;
+}
+
+.menu ul li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
+.line {
+  height: 5px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  box-shadow: 0 2px 10px rgba(88, 147, 243, 0.3);
+}
+
+/* ============================== 
+    INFO DOGS 
+================================= */
 
 #info-dogs {
-    display: flex;
-    padding: 20px 50px;
-    /*background-color: #ea9400;*/
-    /*background-image: url(../img/background_patas.png);*/
-    height: 530px;
-    background-image: url(../img/Design\ sem\ nome\ \(2\).png);
-    background-size: cover;
+  background-color: rgb(247 247 247);
+  display: flex;
+  padding: 20px 50px;
+  height: 530px;
+  background-size: cover;
 }
 
-/* ==========
-    Foto principal
-============= */
-
 .container-slider {
-    display: flex;
-    width: 800px;
-    /*background-color: #c2e3df;*/
-    height: 500px;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding-left: 40px;
+  display: flex;
+  width: 800px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 40px;
 }
 
 .container-images {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    height: 370px;
-    overflow: hidden;
-    padding: 20px 0px;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  height: 470px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  width: 700px;
+  background-color: #222;
 }
 
-.slider img {
-    width: 700px;
-    height: 300px;
-    margin: 0 2rem;
-    object-fit: cover;
-    border-radius: 10px;
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* ==========
-    DESCRIÇÃO
-============= */
+.dog-foto {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+}
+
+.dog-foto.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.dog-foto:first-child:last-child {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+  background-color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+.carousel-btn i {
+  font-size: 20px;
+  color: #333;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background-color: #fff;
+  width: 30px;
+  border-radius: 6px;
+}
 
 .bloco2 {
-    padding-left: 50px;
-    padding-top: 30px;
-    width: 1000px;
+  color: #333;
+  padding-left: 50px;
+  padding-top: 30px;
+  width: 1000px;
 }
 
-.btn-forms {
-    background-color: #edce71;
-    border-radius: 10px;
-    padding: 10px;
-    width: 300px;
-    height: 20px;
-    border: none;
-    align-items: center;
-    text-align: center;
-    display: inline-block; /* ou block */
-    margin-top: 20px; /* adiciona espaço acima */
+.bloco2 h1 {
+  font-family: "vaseline-extra";
+  font-size: 40px;
+  letter-spacing: 2px;
 }
 
-.tabela-container{
-    border-collapse: collapse;
+.descricao-pet {
+  margin-bottom: 20px;
 }
 
-table {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 90%;
+.fatos-essenciais h2 {
+  font-family: "Montserrat-bold";
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-td, th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.grid-detalhes {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 10px 25px;
+  margin-top: 15px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
+.grid-detalhes div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  font-size: 15px;
+}
 
-tr:hover {background-color: #ddd;}
+.grid-detalhes div *:first-child {
+  color: #111111;
+}
 
-th {
-  font-weight: normal;
-  padding-top: 12px;
-  padding-bottom: 12px;
+.grid-detalhes div *:last-child {
+  color: #555;
+}
+
+.detalhe-linha {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+.detalhe-categoria {
+  font-family: "Montserrat-bold";
+  display: inline-block;
   text-align: left;
-  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 5px;
 }
 
-/* ==============================
-    LINHA DE CÃES
-================================= */
-.line-dog {
-    background-image: url(../img/line-dog.png);
-    opacity: 0.3;
-    max-width: 1780px;
-    margin-left: auto;
-    margin-top: 40px;
-    margin-right: auto;
-    background-size: contain;
-    background-repeat: repeat;
-    background-position: center center;
-    margin-bottom: 70px;
-    height: 80px;
-    width: 100%;
+.valor {
+  color: #333;
 }
 
-/* ==============================
-    CARTÕES DE INFO
-================================= */
-.cartao {
-    cursor: default;
-    height: 250px;
-    background-color: #f4f5f7ea;
-    color: rgb(90, 82, 74);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    flex: 1 1 300px;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    transition: transform 0.7s ease, box-shadow 0.7s ease;
+.linha-botao {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 25px;
 }
 
-.cartao:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    z-index: 2;
+.btn-adocao {
+  background-color: #5893f3;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #5893f3;
+  transition: 0.25s ease;
 }
 
-.conteudo-superior {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.btn-adocao:hover {
+  background-color: #fff;
+  color: #5893f3;
+  border-color: #5893f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 147, 243, 0.35);
 }
 
-.cartao h3 {
-    font-family: "Montserrat-bold", sans-serif;
-    font-size: 1.6rem;
-    margin-top: 10px;
-    margin-bottom: 15px;
+.btn-apadrinhamento {
+  background-color: #fff;
+  color: #5893f3;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #5893f3;
+  transition: 0.25s ease;
 }
 
-.cartao i {
-    font-size: 50px;
-    color: rgb(221, 199, 121);
-    margin-bottom: 10px;
+.btn-apadrinhamento:hover {
+  background-color: #5893f3;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 147, 243, 0.35);
 }
 
-.cartao p {
-    padding-top: 20px;
-    font-weight: bold;
-    font-size: 14.5px;
-    margin-bottom: 0;
-}
-
-/* ================
-    IMAGENS
-=================== */
-
-.div-imagens{
-    /*background-color: #eceff4;*/
-    background-color: #8fb4f3;
-    height: 320px;
-}
-.grid2 {
-    display: grid;
-    max-width: 2000px;
-    margin: 0 auto;
-    padding: 20px 30px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    /*background-color: rgb(215, 151, 151);*/
-    height: 1400px;
-}
-
-.item2 {
-    border: 1px solid #faf9f1;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    background-color: #faf9f1;
-    max-height: 400px;
-    border-radius: 10px;
-    padding: 20px;
-    padding-bottom: 25px;
-}
-
-.cartao-imagem {
-    cursor: default;
-    height: 250px;
-    background-color: #f4f5f7ea;
-    color: rgb(90, 82, 74);
-    padding:20px 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    flex: 1 1 300px;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.grid-item2 img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-}
-
-.grid-item2 .descricao {
-    /* background-color: #edce71;*/
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-    font-size: 16px;
-}
-/* ==============================
-    POSICIONAMENTO DOS CARTÕES
+/* ============================== 
+    CARACTERÍSTICAS E PERSONALIDADE 
 ================================= */
 
 .div-cartoes {
-    /*background-color: #eceff4;*/
-    background-color: #8fb4f3;
-    height: 500px;
-
+  background-color: #8fb4f3;
+  padding: 60px 20px 70px;
+  min-height: 500px;
 }
 
-.banner-acoes-agrupadas {
-    position: relative;
-    width: 100%;
-    margin-bottom: 150px;
+.txt-titulos div {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.txt-titulos h2 {
+  margin-top: 10px;
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .acoes-container {
-    position: absolute;
-    margin-top: 20px;
-    padding-top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    width: 100%;
-    max-width: 1300px;
-    z-index: 10;
-    padding: 0 20px;
-    /* background-color: #333;*/
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.cartao {
+  cursor: default;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: #4a5568;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  flex: 1 1 320px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
 }
 
-
-.grid2 {
-    display: grid;
-    max-width: 2000px;
-    margin: 0 auto;
-    padding: 20px 30px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    /*background-color: rgb(215, 151, 151);*/
-    height: 1400px;
+.cartao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-.grid-item2 {
-    border: 5px solid #faf9f1;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    background-color: #faf9f1;
-    max-height: 440px;
-    border-radius: 10px;
+.conteudo-superior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.grid-item2 img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
+.cartao h3 {
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.grid-item2 .descricao {
-    /* background-color: #edce71;*/
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-    font-size: 16px;
+.cartao i {
+  font-size: 50px;
+  color: rgb(221, 199, 121);
+  margin-bottom: 10px;
+}
+
+.cartao p {
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 00;
 }
 
 /* ==============================
     EMPRESAS PARCEIRAS
 ================================= */
 
-.acoes-empresas {
-    background-color: rgb(241, 241, 241);
-    height: 400px;
+.txt-patrocinios div {
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
-.txt-titulos div {
-    max-width: 1500px;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-.txt-titulos h2 {
-    margin-bottom: 30px;
-    text-align: center;
+.txt-patrocinios h3 {
+  color: #636363;
+  font-weight: bold;
+  font-family: "Montserrat-bold", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .line-patrocinio {
-    border-bottom: 2px solid #00000063;
+  border-bottom: 2px solid #00000063;
 }
 
 .slogan-empresas p {
-    font-size: 18px;
-    text-align: center;
+  font-size: 18px;
+  text-align: center;
 }
 
 /* ==============================
@@ -351,48 +585,42 @@ th {
 ================================= */
 
 .logos-infinito {
-    max-width: 1500px;
-    margin: 0 auto;
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: rgb(241, 241, 241);
-    padding: 70px 0;
-    display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 70px 0;
+  display: flex;
 
-    /* Cria um gradiente transparente nas bordas esquerda e direita. */
-    mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 3) 10%,
-            rgba(0, 0, 0, 3) 90%,
-            rgba(0, 0, 0, 0) 100%);
-    /* Para maior compatibilidade */
-    -webkit-mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 3) 10%,
-            rgba(0, 0, 0, 3) 90%,
-            rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 3) 10%,
+    rgba(0, 0, 0, 3) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .logos-slide {
-    display: flex;
-    animation: slide 15s linear infinite;
+  display: flex;
+  animation: slide 15s linear infinite;
 }
 
 .logos-slide img {
-    width: 200px;
-    height: 100px;
-    object-fit: contain;
-    margin: 0 40px;
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 40px;
 }
 
 @keyframes slide {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(-100%);
-    }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* ============================== 
@@ -400,30 +628,35 @@ th {
 ================================= */
 
 .btn-empresas {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
 .botao-empresas {
-    cursor: pointer;
-    background-color: #5893f3;
-    color: white;
-    border: 2px solid white;
-    text-decoration: none;
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
-    margin-top: -2px;
-    margin-bottom: 30px;
+  cursor: pointer;
+  background-color: #5893f3;
+  color: white;
+  border: 2px solid white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-top: -2px;
+  margin-bottom: 30px;
 }
 
 .botao-empresas:hover {
-    background-color: #636363;
+  background-color: #636363;
 }
 
+/* ============================== 
+    FOOTER 
+================================= */
+
 footer {
+  padding: 40px 20px;
   background-color: #5893f3;
   padding: 20px 0;
   color: #fff;
@@ -431,63 +664,135 @@ footer {
 
 .footer-container {
   display: flex;
-  max-width: 1000px;
+  max-width: 1700px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 200px;
+  justify-content: space-between;
 }
 
-.footer-column {
-  flex: 1;
+.container-logos {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
-.footer-column .sociais-footer {
-  text-align: unset;
-  font-size: 30px;
-  gap: 20px;
-
+.sociais-footer {
+  text-align: end;
 }
 
-.footer-column .logo {
+.logo {
   max-width: 150px;
-
-}
-
-.footer-column h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.footer-column li{
-  list-style: none;
-}
-
-.footer-column ul {
-  list-style: none; 
-  padding: 0;   
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 6px;
-  
-}
-
-.footer-column ul li {
-  font-size: 15px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .sociais-footer a {
-  margin-right: 10px;
   color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-footer a {
-  text-decoration: none;
-  color: #fff; 
+  font-size: 24px;
+  margin-right: 10px;
+  margin-left: 5px;
+  transition: color 0.3s ease;
 }
 
-footer a:hover {
+.sociais-footer a:hover {
+  color: #636363;
+}
+
+.footer-column h3,
+.coluna-contatos h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #636363;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.coluna-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-column ul {
+  line-height: 1.5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #636363;
   text-decoration: underline;
+}
+
+.coluna-contatos p {
+  line-height: 1.5;
+}
+
+/* ============================== 
+    EXTRAS 
+================================= */
+
+.line-dog {
+  background-image: url(../img/line-dog.png);
+  opacity: 0.3;
+  max-width: 1780px;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-right: auto;
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: center center;
+  margin-bottom: 70px;
+  height: 80px;
+  width: 100%;
+}
+
+.banner-acoes-agrupadas {
+  position: relative;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.grid2 {
+  display: grid;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  height: 1400px;
+}
+
+.grid-item2 {
+  border: 5px solid #faf9f1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #faf9f1;
+  max-height: 440px;
+  border-radius: 10px;
+}
+
+.grid-item2 img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-item2 .descricao {
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 16px;
 }

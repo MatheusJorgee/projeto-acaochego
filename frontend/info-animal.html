@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" typetext="text/css" href="./assets/css/estilo2.css">
-    <link rel="stylesheet" typetext="text/css" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
     <title>Acãochego</title>
 </head>
@@ -14,7 +14,9 @@
     <header>
         <div class="top-bar">
             <div class="container">
-                <img src="./assets/img/logo/logo-acaochego.png" alt="Logo Acãochego" class="logo" />
+                <a href="index.html">
+                    <p><img src="assets/img/logo/logo-acaochego.png" alt="Logo Acãochego" class="logo" /></p>
+                </a>
 
                 <div class="name-slogan">
                     <p class="name">ACÃOCHEGO</p>
@@ -24,11 +26,6 @@
                 </div>
 
                 <div class="right-column-stack">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
 
                     <button class="menu-toggle" aria-label="Abrir menu">
                         <i class="fa-solid fa-bars"></i>
@@ -42,11 +39,7 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
                 <li><a href="adocao.html">Quero Adotar</a></li>
-                <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
                 <li><a href="pages/">Preciso de Ajuda</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li><a href="#">Finais Felizes</a></li>
-                <li><a href="#">Tributo</a></li>
             </ul>
         </nav>
         <div class="line"></div>
@@ -56,97 +49,85 @@
         <section id="info-dogs">
 
             <div id="container-slider" class="container-slider">
-
-                <div class="container-images" id="dog-slider">
-                </div>
+                <div class="container-images" id="dog-slider"></div>
             </div>
 
             <div class="bloco2">
-                <div class="tabela-container">
 
-                    <h1 id="dog-name"></h1>
-                    <h3 id="dog-subtitle"></h3>
+                <h1 id="dog-name"></h1>
+                <h3 id="dog-subtitle"></h3>
 
-                    <br>
-
-                    <table>
-                        <tr>
-                            <th>Nome</th>
-                            <td id="t-nome"></td>
-                        </tr>
-                        <tr>
-                            <th>Idade</th>
-                            <td id="t-idade"></td>
-                        </tr>
-                        <tr>
-                            <th>Raça</th>
-                            <td id="t-raca"></td>
-                        </tr>
-                        <tr>
-                            <th>Porte</th>
-                            <td id="t-porte"></td>
-                        </tr>
-                        <tr>
-                            <th>Sexo</th>
-                            <td id="t-sexo"></td>
-                        </tr>
-                        <tr>
-                            <th>Localização</th>
-                            <td id="t-local"></td>
-                        </tr>
-                    </table>
+                <div class="descricao-pet">
+                    <p id="dog-description"></p>
                 </div>
 
+                <div class="fatos-essenciais">
+
+                    <h2>Detalhes Essenciais:</h2>
+
+                    <div class="grid-detalhes">
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-bone"></i> Nome:</span>
+                            <span id="t-nome" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-paw"></i> Idade:</span>
+                            <span id="t-idade" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-shield-dog"></i> Raça:</span>
+                            <span id="t-raca" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-dog"></i> Porte:</span>
+                            <span id="t-porte" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-venus-mars"></i> Sexo:</span>
+                            <span id="t-sexo" class="valor"></span>
+                        </div>
+
+                        <div class="detalhe-linha">
+                            <span class="detalhe-categoria"><i class="fa-solid fa-location-dot"></i> Localização:</span>
+                            <span id="t-local" class="valor"></span>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="linha-botao">
-                    <a class="btn-forms" href="#">Formulário de Adoção</a>
-                    <a class="btn-forms" href="#">Formulário de Apadrinhamento</a>
+                    <a class="btn-adocao" href="#">Formulário de Adoção</a>
+                    <a class="btn-apadrinhamento" href="#">Formulário de Apadrinhamento</a>
                 </div>
+
             </div>
         </section>
 
-        <section class="div-cartoes">
-            <div class="txt-titulos">
-                <h2>MAIS IMAGENS</h2>
-            </div>
-
-            <div class="div-imagens" id="dog-imagens">
-                <ul class="grid2" id="dog-imagens-lista">
-                    <li class="item2 cartao-imagem">
-
-                    </li>
-
-                    <li class="item2 cartao-imagem">
-
-                    </li>
-
-                    <li class="item2 cartao-imagem">
-
-                    </li>
-                </ul>
-            </div>
-        </section>
         <section class="div-cartoes">
 
             <div class="txt-titulos">
                 <h2>CARACTERÍSTICAS E PERSONALIDADE</h2>
             </div>
-
             <div class="acoes-container" id="dog-caracteristicas">
             </div>
         </section>
 
         <section class="acoes-empresas">
-            <div class="txt-titulos">
+            <div class="txt-patrocinios">
                 <div class="empresas-amigas">
-                    <h2>EMPRESAS AMIGAS</h2>
+                    <h3>EMPRESAS AMIGAS</h3>
                     <div class="line-patrocinio"></div>
                 </div>
-                <br />
+
             </div>
             <div class="logos-infinito">
                 <div class="logos-slide">
-                    <img src="./assets/img/logos empresas/animalCenter.jpg" />
-                    <img src="./assets/img/logos empresas/dogHero.png" />
+                    <img src="../frontend/assets/img/logos empresas/animalCenter.jpg" />
+                    <img src="../frontend/assets/img/logos empresas/dogHero.png" />
                     <img src="./assets/img/logos empresas/hills.png" />
                     <img src="./assets/img/logos empresas/petlife.png" />
                     <img src="./assets/img/logos empresas/petlove.png" />
@@ -154,8 +135,8 @@
                 </div>
                 <!--PADRONIZAR TAMANHO DAS LOGOS-->
                 <div class="logos-slide">
-                    <img src="./assets/img/logos empresas/animalCenter.jpg" />
-                    <img src="./assets/img/logos empresas/dogHero.png" />
+                    <img src="../frontend/assets/img/logos empresas/animalCenter.jpg" />
+                    <img src="../frontend/assets/img/logos empresas/dogHero.png" />
                     <img src="./assets/img/logos empresas/hills.png" />
                     <img src="./assets/img/logos empresas/petlife.png" />
                     <img src="./assets/img/logos empresas/petlove.png" />
@@ -170,49 +151,48 @@
 
     <footer>
         <div class="footer-container">
-            <ul>
-                <img src="./assets/img/logo/logo-acaochego.png" alt="Logo Acãochego" class="logo" />
+
+            <div class="container-logos">
+                <img src="assets/img/logo/logo-acaochego.png" alt="Logo Acãochego" class="logo" />
                 <div class="sociais-footer">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-            </ul>
-            <!--Fim ul 1-->
+            </div>
 
-            <!--Começo ul 2-->
-            <ul>
+            <div class="footer-column">
                 <h3>Link</h3>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
-                <li><a href="pages/form-adocao.html">Quero Adotar</a></li>
-                <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-                <li><a href="pages/">Preciso de Ajuda</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li><a href="#">Finais Felizes</a></li>
-                <li><a href="#">Tributo</a></li>
-            </ul>
-            <!--Fim ul 2-->
+                <div class="coluna-links">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
+                        <li><a href="adocao.html">Quero Adotar</a></li>
+                        <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="pages/">Preciso de Ajuda</a></li>
+                        <li><a href="#">Matérias</a></li>
+                        <li><a href="#">Finais Felizes</a></li>
+                        <li><a href="#">Tributo</a></li>
+                    </ul>
+                </div>
+            </div>
 
-            <!--Começo ul 3-->
-            <ul>
+            <div class="coluna-contatos">
                 <h3>Nos contate</h3>
-                <li>
-                    <p>(+55) 11 99999-9999</p>
-                </li>
-                <li>
-                    <p>emailempresa@acaochego.com.br</p>
-                </li>
-                <li>Brasil</li>
-            </ul>
-            <!--Fim ul 3-->
-        </div>
+                <p>(+55) 11 99999-9999</p>
+                <p>emailempresa@acaochego.com.br</p>
+                <p>Brasil</p>
+            </div>
+
         </div>
     </footer>
 
+    <script src="assets/js/main.js"></script>
     <script src="./assets/js/dogs.js"></script>
     <script src="./assets/js/dog-page.js"></script>
-    <script src="./assets/js/main.js"></script>
+
 
 </body>
 
