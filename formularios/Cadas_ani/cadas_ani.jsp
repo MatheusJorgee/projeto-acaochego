@@ -94,6 +94,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/frontend/assets/img/logo/logo-acaochego.png">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/fonts.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
     <title>Cadastrar Animal</title>
