@@ -2,7 +2,6 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-    // 1. Verificação de Login
     if (session.getAttribute("usuario") == null) {
         response.sendRedirect(request.getContextPath() + "/formularios/login/login.html");
         return;
@@ -10,10 +9,8 @@
 
     request.setCharacterEncoding("UTF-8");
 
-    // 2. Leitura dos Parâmetros do Formulário (POST)
     if (request.getMethod().equalsIgnoreCase("POST")) {
 
-        // Variáveis lidas do Formulário:
         String vnome_ani = request.getParameter("nome_ani");
         String vdata_nas = request.getParameter("nas");
         String vraca     = request.getParameter("raca");
@@ -23,12 +20,11 @@
             vsexo = "";
         } else {
             String primeiraLetra = vsexo.trim().substring(0, 1).toUpperCase();
-            vsexo = primeiraLetra; // salva apenas 'M' ou 'F'
+            vsexo = primeiraLetra;
         }
-        String vcidade   = request.getParameter("cidade"); // Campo adicionado
-        String vestado   = request.getParameter("estado"); // Campo adicionado (UF)
+        String vcidade   = request.getParameter("cidade");
+        String vestado   = request.getParameter("estado");
         
-        // 3. Validação Básica
         if (vnome_ani == null || vdata_nas == null || vraca == null || vporte == null || vsexo == null || vcidade == null || vestado == null ||
             vnome_ani.isEmpty() || vdata_nas.isEmpty() || vraca.isEmpty() || vporte.isEmpty() || vsexo.isEmpty() || vcidade.isEmpty() || vestado.isEmpty()) {
 
@@ -38,16 +34,12 @@
 
         Connection conexao = null;
         try {
-            // Conexão com banco
-            Class.forName("com.mysql.jdbc.Driver"); // Nome do Driver
+            Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/projeto2?serverTimezone=UTC";
             conexao = DriverManager.getConnection(url, "root", "");
             
             int idCidade = 0;
 
-            // --- LÓGICA DE INSERIR OU SELECIONAR CIDADE ---
-
-            // 4. Tenta encontrar a cidade existente
             String sqlSelectCidade = "SELECT id_cidade FROM cidade WHERE cidade = ? AND uf = ?";
             PreparedStatement stmSelectCidade = conexao.prepareStatement(sqlSelectCidade);
             stmSelectCidade.setString(1, vcidade);
@@ -55,18 +47,14 @@
             ResultSet rsSelectCidade = stmSelectCidade.executeQuery();
 
             if (rsSelectCidade.next()) {
-                // Cidade JÁ existe, pega o ID
                 idCidade = rsSelectCidade.getInt("id_cidade");
             } else {
-                // Cidade NÃO existe, insere a nova
                 String sqlInsertCidade = "INSERT INTO cidade (cidade, uf) VALUES (?, ?)";
-                // Adicione Statement.RETURN_GENERATED_KEYS para obter o ID
                 PreparedStatement stmInsertCidade = conexao.prepareStatement(sqlInsertCidade, Statement.RETURN_GENERATED_KEYS);
                 stmInsertCidade.setString(1, vcidade);
                 stmInsertCidade.setString(2, vestado);
                 stmInsertCidade.executeUpdate();
 
-                // Obtém o ID da cidade recém-inserida
                 ResultSet rsKeys = stmInsertCidade.getGeneratedKeys();
                 if (rsKeys.next()) {
                     idCidade = rsKeys.getInt(1);
@@ -76,20 +64,16 @@
             }
             rsSelectCidade.close();
             stmSelectCidade.close();
-            
-            // --- FIM DA LÓGICA DE CIDADE ---
 
-            // 5. Insere o Animal usando o idCidade obtido/gerado
-            // Ajustamos a query para usar data_nas, raca, porte e id_cidade.
             String sqlAnimal = "INSERT INTO animais (nome_ani, data_nas, raca, porte, sexo, id_cidade) VALUES (?, ?, ?, ?, ?, ?)";
             
             PreparedStatement stmAnimal = conexao.prepareStatement(sqlAnimal);
             stmAnimal.setString(1, vnome_ani);
-            stmAnimal.setString(2, vdata_nas); // A data já vem no formato 'AAAA-MM-DD' de input type="date"
-            stmAnimal.setString(3, vraca); 
-            stmAnimal.setString(4, vporte); 
+            stmAnimal.setString(2, vdata_nas);
+            stmAnimal.setString(3, vraca);
+            stmAnimal.setString(4, vporte);
             stmAnimal.setString(5, vsexo);
-            stmAnimal.setInt(6, idCidade); // CHAVE ESTRANGEIRA (ID da cidade)
+            stmAnimal.setInt(6, idCidade);
 
             stmAnimal.execute();
             stmAnimal.close();
@@ -99,17 +83,13 @@
 
         } catch (Exception e) {
             out.print("Erro ao salvar no banco: " + e.getMessage());
-            // Para debug, é útil imprimir o stack trace no console do servidor.
-            // e.printStackTrace(); 
         } finally {
-            // Garante que a conexão será fechada, mesmo se ocorrer um erro.
             if (conexao != null) {
                 try { conexao.close(); } catch (SQLException ignore) {}
             }
         }
     }
 %>
-<!-- FORMULÁRIO  -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -120,7 +100,7 @@
 
       <style>
 .caixa input {
-    width: 80%;
+    width: 100%;
     padding: 12px 20px;
     border: 2px solid #84baef;
     border-radius: 25px;
@@ -136,11 +116,11 @@
 }
 
     h2 {
-            margin-top: 80px;
+            margin-top: 40px;
             font-size: 45px;
             color: #5aa0ff;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
    </style>
@@ -166,28 +146,8 @@
                         ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
                     </p>
                 </div>
-
-               
-
-                    <button class="menu-toggle" aria-label="Abrir menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
             </div>
         </div>
-
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
-                <li><a href="adocao.html">Quero Adotar</a></li>
-                <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-                <li><a href="pages/">Preciso de Ajuda</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li><a href="#">Finais Felizes</a></li>
-                <li><a href="#">Tributo</a></li>
-            </ul>
-        </nav>
         <div class="line"></div>
     </header>
 
@@ -204,7 +164,7 @@
 
     <div class="grupo-cx">
 
-          <div class="caixa">
+          <div class="caixa" style="grid-column: span 2;">
             <label>Nome do Animal</label>
             <input type="text" name="nome_ani" required>
         </div>
@@ -288,5 +248,7 @@
 
 </form>
 
+<script src="https://kit.fontawesome.com/45bbe533ad.js" crossorigin="anonymous"></script>
+<script src="<%= request.getContextPath() %>/frontend/assets/js/main.js"></script>
 </body>
 </html>

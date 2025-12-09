@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/projeto-acaochego/frontend/assets/css/section-um.css">
-    <title>Acãochego</title>
+    <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/contato.css">
+    <title>Contato - Acãochego</title>
 </head>
 
 <body>
@@ -24,7 +26,6 @@
                 </div>
 
                 <div class="right-column-stack">
-
                     <button class="menu-toggle" aria-label="Abrir menu">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -34,16 +35,129 @@
 
         <nav class="menu">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre-nos.html">A Acãochego</a></li>
+                <li><a href="../index.html">Início</a></li>
                 <li><a href="adocao.html">Quero Adotar</a></li>
-                <li><a href="contato.html">Quero Apadrinhar</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
         <div class="line"></div>
     </header>
-    
-    <!-- conteúdo da página contato aqui -->
+
+    <main class="contato-main">
+        <section class="contato-hero">
+            <h1>Entre em Contato</h1>
+            <p>Estamos aqui para ajudar você a fazer a diferença na vida de um animal</p>
+        </section>
+
+        <section class="contato-container">
+            <div class="layout-wrapper">
+                <div class="cards-column">
+                    <div class="info-card">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3>Localização</h3>
+                        <p>Rua Exemplo, 123<br>São Paulo - SP<br>CEP: 01234-567</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h3>Telefone</h3>
+                        <p>(11) 99999-9999<br>(11) 3333-3333</p>
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <div class="contato-form-wrapper">
+                        <h2>Envie sua Mensagem</h2>
+                        
+                        <div id="mensagem-sucesso" class="alert-sucesso" style="display: none;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <p>Mensagem enviada com sucesso! Você receberá um e-mail de confirmação em breve.</p>
+                        </div>
+
+                        <form class="contato-form" method="POST" action="/projeto-acaochego/backend/controllers/ContatoController.jsp">
+                            <div class="form-group">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assunto">Assunto</label>
+                                <select id="assunto" name="assunto" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="Adoção">Adoção</option>
+                                    <option value="Apadrinhamento">Apadrinhamento</option>
+                                    <option value="Doação">Doação</option>
+                                    <option value="Voluntariado">Voluntariado</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-enviar">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cards-column">
+                <div class="info-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>testeacaochego@gmail.com</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="redes-sociais">
+            <h2>Siga-nos nas Redes Sociais</h2>
+            <p>Acompanhe nosso trabalho e fique por dentro das novidades</p>
+            <div class="social-links">
+                <a href="#" class="social-btn instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-btn facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-container">
@@ -59,20 +173,11 @@
 
             <div class="footer-column">
                 <h3>Link</h3>
-                <div class="coluna-links">
-                    <ul>
-                        <li><a href="/projeto-acaochego/frontend/index.html">Início</a></li>
-                        <li><a href="/projeto-acaochego/frontend/pages/sobre-nos.html">A Acãochego</a></li>
-                        <li><a href="/projeto-acaochego/frontend/pages/adocao.html">Quero Adotar</a></li>
-                        <li><a href="/projeto-acaochego/frontend/pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/projeto-acaochego/frontend/pages/">Preciso de Ajuda</a></li>
-                        <li><a href="#">Matérias</a></li>
-                        <li><a href="#">Finais Felizes</a></li>
-                        <li><a href="#">Tributo</a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><a href="/projeto-acaochego/frontend/index.html">Início</a></li>
+                    <li><a href="/projeto-acaochego/frontend/pages/adocao.html">Quero Adotar</a></li>
+                    <li><a href="/projeto-acaochego/frontend/pages/contato.html">Contato</a></li>
+                </ul>
             </div>
 
             <div class="coluna-contatos">
@@ -84,6 +189,24 @@
 
         </div>
     </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Verifica se há parâmetro de sucesso na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('sucesso') === 'true') {
+            const alertaSucesso = document.getElementById('mensagem-sucesso');
+            if (alertaSucesso) {
+                alertaSucesso.style.display = 'flex';
+                // Remove o parâmetro da URL após 3 segundos
+                setTimeout(() => {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }, 3000);
+                // Scroll suave até o formulário
+                alertaSucesso.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 </body>
 
 </html>

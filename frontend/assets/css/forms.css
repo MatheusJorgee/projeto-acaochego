@@ -287,7 +287,7 @@ h1::after, h2::after {
 }
 
 /* ==============================
-    FORMULÃRIO
+    FORMULÁRIO
 ================================= */
 form {
   max-width: 1000px;
@@ -296,7 +296,7 @@ form {
 }
 
 /* ==============================
-    GRID DO FORMULÃRIO (2 COLUNAS)
+    GRID DO FORMULÁRIO (2 COLUNAS)
 ================================= */
 .grupo-cx {
   display: grid;
@@ -305,6 +305,24 @@ form {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px 0 40px;
+}
+
+/* Grid para formulários de login (coluna única, campos com mesma largura) */
+.grupo-cx-login {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 0 20px;
+}
+
+.grupo-cx-login .caixa {
+  width: 100%;
+}
+
+.grupo-cx-login .caixa:first-child {
+  grid-column: span 1;
 }
 
 /* ==============================
@@ -332,6 +350,7 @@ form {
 }
 
 .caixa input[type="text"],
+.caixa input[type="password"],
 .caixa input[type="date"],
 .caixa select {
   width: 100%;
@@ -391,7 +410,7 @@ form {
   font-size: 1rem;
 }
 
-/* Campo de data - ajuste especÃ­fico */
+/* Campo de data - ajuste específico */
 .caixa input[type="date"] {
   padding: 16px 24px;
   cursor: pointer;
@@ -404,7 +423,7 @@ form {
 }
 
 /* ==============================
-    BOTÃƒO DE CADASTRAR
+    BOTÃO DE CADASTRAR
 ================================= */
 .btn-container2 {
   grid-column: span 2;
@@ -463,7 +482,7 @@ form {
 }
 
 /* ==============================
-    ANIMAÃ‡ÃƒO DE ENTRADA
+    ANIMAÇÃO DE ENTRADA
 ================================= */
 @keyframes fadeInUp {
   from {
@@ -486,7 +505,7 @@ form {
 form {
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 30px 80px;
+  padding: 0 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -495,6 +514,7 @@ form {
 }
 
 form input[type="text"],
+form input[type="password"],
 form input[type="date"] {
   width: 100%;
   max-width: 600px;
@@ -590,6 +610,129 @@ hr {
 ================================= */
 input[type="hidden"] {
   display: none;
+}
+
+/* ==============================
+    ESTILOS ESPECÍFICOS DE LOGIN
+================================= */
+
+/* Caixa de input com ícone de senha */
+.input-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 18px 50px 18px 24px !important;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #5893f3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.input-box i:hover {
+  color: #4a7dd8;
+}
+
+/* Torna o cursor pointer apenas para os ícones que ativam o toggle */
+#togglePassword,
+#toggleConfirmPassword {
+  cursor: pointer;
+}
+
+/* Container wrapper para páginas de login */
+.wrapper {
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 2.5rem;
+    color: #5893f3;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.wrapper h1 {
+  font-size: 2.5rem;
+  color: #5893f3;
+  font-family: "Montserrat Bold", sans-serif;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.wrapper h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  border-radius: 3px;
+}
+
+/* Links de navegação nas páginas de login */
+.links-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.links-container p,
+.register-link,
+.forgot-password {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 10px 0;
+  font-family: "Montserrat Regular", sans-serif;
+}
+
+.links-container a,
+.register-link a,
+.forgot-password a {
+  color: #5893f3;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Montserrat Bold", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.links-container a:hover,
+.register-link a:hover,
+.forgot-password a:hover {
+  color: #4a7dd8;
+  text-decoration: underline;
+}
+
+/* Container main para centralizar formulários de login */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 250px);
+  padding: 60px 20px;
+}
+
+.form-container {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.6s ease-out;
 }
 
 /* ==============================

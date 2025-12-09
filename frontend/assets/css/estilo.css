@@ -4,6 +4,10 @@
   font-family: "Montserrat Regular", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-size: 16px;
@@ -567,9 +571,11 @@ footer {
 
 .footer-container {
   display: flex;
-  max-width: 1700px;
+  max-width: 1400px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px 40px;
 }
 
 .container-logos {
@@ -612,7 +618,8 @@ footer {
 
 .coluna-links {
   display: flex;
-  gap: 30px;
+  gap: 60px;
+  align-items: flex-start;
 }
 
 .footer-column ul {
@@ -620,6 +627,7 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  min-width: 150px;
 }
 
 .footer-column li {

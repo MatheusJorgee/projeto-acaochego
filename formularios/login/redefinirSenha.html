@@ -1,138 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-       <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ededed;
-            background-image: url('background-pattern.png'); /* Coloque aqui a imagem do fundo */
-            background-size: cover;
-        }
-        .wrapper {
-            width: 420px;
-            background: white;
-            border-radius: 20px;
-            padding: 30px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-            text-align: center;
-        }
-        .wrapper h1 {
-            font-size: 23px;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin-bottom: 20px;
-        }
-        .input-box {
-            width: 100%;
-            height: 50px;
-            background-color: transparent;
-            margin: 20px 0;
-            position: relative;
-        }
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: #f2f2f2;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 16px;
-            color: #333;
-            padding: 15px 20px;
-            outline: none;
-        }
-        .input-box i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: #333;
-            cursor: pointer;
-        }
-        .btn {
-            width: 100%;
-            height: 45px;
-            background-color: #4C0E62;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        .social-login {
-            margin: 20px 0;
-        }
-        .social-login a {
-            font-size: 24px;
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-        }
-        .register-link, .forgot-password {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-        }
-        .register-link:hover, .forgot-password:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="../../frontend/assets/css/fonts.css" />
+    <link rel="stylesheet" href="../../frontend/assets/css/forms.css" />
+    <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
+    <title>Redefinir Senha - Acãochego</title>
 </head>
 
-<body>
-    <div class="wrapper">
-        <h1>REDEFINIR SENHA</h1>
-        <div class="social-login">
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <img class="logo link" src="../../frontend/assets/img/logo/logo-acaochego.png" alt="Logo Acãochego">
+
+            <script>
+                document.querySelector('.logo.link').addEventListener('click', () => {
+                    window.location.href = "../../frontend/index.html";
+                });
+            </script>
+
+            <div class="name-slogan">
+                <p class="name">ACÃOCHEGO</p>
+                <p class="slogan">
+                    ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
+                </p>
+            </div>
         </div>
-        <form action="redefinir.jsp" method="POST">
-            <div class="input-box">
-                <input type="text" placeholder="Usuário" id="login" name="login" required>
+    </div>
+    <div class="line"></div>
+</header>
+
+<body style="background-image: url('../../frontend/assets/img/background_patas.png');">
+
+    <h2 style="margin: 40px auto 20px;">Redefinir Senha</h2>
+
+    <form action="redefinir.jsp" method="POST" style="padding-bottom: 20px;">
+        <div class="grupo-cx-login">
+            <div class="caixa">
+                <label for="login">Usuário</label>
+                <input type="text" id="login" name="login" required>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Nova Senha" id="senha" name="senha" required>
-                <i class='bx bxs-lock' id="togglePassword"></i>
+
+            <div class="caixa">
+                <label for="senha">Nova Senha</label>
+                <input type="password" id="senha" name="senha" required>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Confirmar Senha" id="confirmar_senha" name="confirmar_senha" required>
+
+            <div class="caixa">
+                <label for="confirmar_senha">Confirmar Senha</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
             </div>
-            <button type="submit" class="btn">Redefinir</button>
-        </form>
-        <p class="register-link"><a href="login.html">Já tenho uma conta</a></p>
-        <p class="register-link"><a href="Crialogin.html">Não tem uma conta? Registre-se</a></p>
+        </div>
+
+        <div class="btn-container2">
+            <button type="submit">Redefinir</button>
+        </div>
+    </form>
+
+    <div style="text-align: center; margin: 15px 0 20px; font-family: 'Montserrat Regular', sans-serif;">
+        <p style="margin-bottom: 10px;"><a href="login.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Já tenho uma conta</a></p>
+        <p style="margin-bottom: 0;"><a href="Crialogin.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Não tem uma conta? Registre-se</a></p>
     </div>
 
-
-
-
-    <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#senha');
-
-        togglePassword.addEventListener('click', function () {
-            // Alterna o tipo do input entre 'password' e 'text'
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-
-            // Alterna o ícone entre o cadeado fechado e aberto
-            this.classList.toggle('bxs-lock-open');
-        });
-    </script>
-
-
+    <script src="../../frontend/assets/js/main.js"></script>
 </body>
 </html>

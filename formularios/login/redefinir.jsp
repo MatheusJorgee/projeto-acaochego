@@ -38,6 +38,8 @@
 
                     if (linhas > 0) {
                         status = "success";
+                        // Redireciona para login após 2 segundos
+                        response.setHeader("Refresh", "2; URL=login.html");
                     } else {
                         status = "error";
                     }
@@ -62,107 +64,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/fonts.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
+    <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
     <title>Redefinir Senha - Acãochego</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ededed;
-            background-image: url('background-pattern.png');
-            background-size: cover;
-        }
-        .wrapper {
-            width: 420px;
-            background: white;
-            border-radius: 20px;
-            padding: 30px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-            text-align: center;
-        }
-        .wrapper h1 {
-            font-size: 23px;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin-bottom: 20px;
-        }
-        .input-box {
-            width: 100%;
-            height: 50px;
-            background-color: transparent;
-            margin: 20px 0;
-            position: relative;
-        }
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: #f2f2f2;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 16px;
-            color: #333;
-            padding: 15px 20px;
-            outline: none;
-        }
-        .btn {
-            width: 100%;
-            height: 45px;
-            background-color: #4C0E62;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #6a1183;
-        }
-        .register-link {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-        .register-link:hover {
-            text-decoration: underline;
-        }
+    
+    <style>
         .message {
-            margin: 15px 0;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 14px;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-family: 'Montserrat Regular', sans-serif;
+            font-size: 1rem;
+            text-align: center;
         }
         .message.success {
             background-color: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
+            border: 3px solid #c3e6cb;
         }
         .message.error {
             background-color: #f8d7da;
             color: #721c24;
-            border: 1px solid #f5c6cb;
+            border: 3px solid #f5c6cb;
+        }
+        .message a {
+            color: #5893f3;
+            font-weight: 600;
+            text-decoration: none;
         }
     </style>
 </head>
 
-<body>
-    <div class="wrapper">
-        <h1>REDEFINIR SENHA</h1>
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <img class="logo link" src="<%= request.getContextPath() %>/frontend/assets/img/logo/logo-acaochego.png" alt="Logo Acãochego">
 
-        <% if (status.equals("success")) { %>
-            <div class="message success">
-                Senha redefinida com sucesso! <a href="login.html">Voltar ao login</a>
+            <script>
+                document.querySelector('.logo.link').addEventListener('click', () => {
+                    window.location.href = "<%= request.getContextPath() %>/frontend/index.html";
+                });
+            </script>
+
+            <div class="name-slogan">
+                <p class="name">ACÃOCHEGO</p>
+                <p class="slogan">
+                    ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
+                </p>
             </div>
-        <% } else if (status.equals("mismatch")) { %>
+        </div>
+    </div>
+    <div class="line"></div>
+</header>
+
+<body style="background-image: url('<%= request.getContextPath() %>/frontend/assets/img/background_patas.png');">
+
+    <h2 style="margin: 40px auto 20px;">Redefinir Senha</h2>
+
+    <% if (status.equals("success")) { %>
+        <div class="message success">
+            Senha redefinida com sucesso! Redirecionando para o login...
+        </div>
+    <% } else { %>
+        
+        <% if (status.equals("mismatch")) { %>
             <div class="message error">
                 As senhas não coincidem!
             </div>
@@ -176,21 +143,35 @@
             </div>
         <% } %>
 
-        <form action="redefinir.jsp" method="POST">
-            <div class="input-box">
-                <input type="text" placeholder="Usuário" id="login" name="login" required>
+        <form action="redefinir.jsp" method="POST" style="padding-bottom: 20px;">
+            <div class="grupo-cx-login">
+                <div class="caixa">
+                    <label for="login">Usuário</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+
+                <div class="caixa">
+                    <label for="senha">Nova Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+
+                <div class="caixa">
+                    <label for="confirmar_senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Nova Senha" id="senha" name="senha" required>
+
+            <div class="btn-container2">
+                <button type="submit">Redefinir</button>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Confirmar Senha" id="confirmar_senha" name="confirmar_senha" required>
-            </div>
-            <button type="submit" class="btn">Redefinir</button>
         </form>
 
-        <p class="register-link"><a href="login.html">Voltar ao login</a></p>
-        <p class="register-link"><a href="Crialogin.html">Não tem uma conta? Registre-se</a></p>
-    </div>
+        <div style="text-align: center; margin: 30px 0; font-family: 'Montserrat Regular', sans-serif;">
+            <p style="margin-bottom: 10px;"><a href="login.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Voltar ao login</a></p>
+            <p style="margin-bottom: 0;"><a href="Crialogin.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Não tem uma conta? Registre-se</a></p>
+        </div>
+    <% } %>
+
+    <script src="<%= request.getContextPath() %>/frontend/assets/js/main.js"></script>
 </body>
 </html>

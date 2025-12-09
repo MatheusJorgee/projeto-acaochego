@@ -3,175 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
-
-    <style type="text/css">
-       
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ededed;
-            background-image: url('background-pattern.png');
-            background-size: cover;
-        }
-        .wrapper {
-            width: 420px;
-            background: white;
-            border-radius: 20px;
-            padding: 30px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-            text-align: center;
-        }
-        .wrapper h1 {
-            font-size: 23px;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin-bottom: 20px;
-        }
-        .input-box {
-            width: 100%;
-            height: 50px;
-            background-color: transparent;
-            margin: 20px 0;
-            position: relative;
-        }
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: #f2f2f2;
-            border: 1px solid #5893f3;
-            border-radius: 10px;
-            font-size: 16px;
-            color: #333;
-            padding: 15px 20px;
-            outline: none;
-        }
-        .input-box i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: #333;
-            cursor: pointer;
-        }
-        .btn {
-            width: 100%;
-            height: 45px;
-            background-color: #5893f3;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        .social-login {
-            margin: 20px 0;
-        }
-        .social-login a {
-            font-size: 24px;
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-        }
-        .register-link, .forgot-password {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-        }
-        .register-link:hover, .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        /* Container da logo */
-        .container {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start; /* envia para o canto esquerdo */
-            align-items: center;
-            padding: 20px;
-            position: absolute; 
-            top: 0;
-            left: 0;
-        }
-
-        /* Ajuste da logo */
-        .logo {
-            width: 160px; /* ajuste o tamanho como quiser */
-            cursor: pointer;
-            transition: transform 0.25s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="../../frontend/assets/css/fonts.css" />
+    <link rel="stylesheet" href="../../frontend/assets/css/forms.css" />
+    <script src="https://kit.fontawesome.com/dcf460ffec.js" crossorigin="anonymous"></script>
+    <title>Login - Acãochego</title>
 </head>
 
-<body>
-<div class="container">
-    <img class="logo link"
-         src="<%= request.getContextPath() %>/frontend/assets/img/logo/logo-acaochego.png"
-         alt="Logo Acãochego">
-</div>
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <img class="logo link" src="../../frontend/assets/img/logo/logo-acaochego.png" alt="Logo Acãochego">
 
-<script>
-document.querySelector('.logo.link').addEventListener('click', () => {
-    window.location.href = "<%= request.getContextPath() %>/frontend/index.html";
-});
-</script>
+            <script>
+                document.querySelector('.logo.link').addEventListener('click', () => {
+                    window.location.href = "../../frontend/index.html";
+                });
+            </script>
 
-
-
-    <div class="wrapper">
-        <h1> ENTRE </h1>
-        <div class="social-login">
+            <div class="name-slogan">
+                <p class="name">ACÃOCHEGO</p>
+                <p class="slogan">
+                    ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
+                </p>
+            </div>
         </div>
-        <form action="verificaLogin.jsp" method="POST">
-            <div class="input-box">
-                <input type="text" placeholder="Usuário" id="login" name="login" required>
+    </div>
+    <div class="line"></div>
+</header>
+
+<body style="background-image: url('../../frontend/assets/img/background_patas.png');">
+
+    <h2 style="margin: 40px auto 20px;">Login</h2>
+
+    <form action="verificaLogin.jsp" method="POST" style="padding-bottom: 20px;">
+        <div class="grupo-cx-login">
+            <div class="caixa">
+                <label for="login">Usuário</label>
+                <input type="text" id="login" name="login" required>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Crie uma Senha" id="senha" name="senha" required>
-                <i class='bx bxs-lock' id="togglePassword"></i>
+
+            <div class="caixa">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
             </div>
-            <button type="submit" class="btn">Entrar</button>
-        </form>
-        <p class="register-link"><a href="Crialogin.html">Não tenho uma conta</a></p>
+        </div>
+
+        <div class="btn-container2">
+            <button type="submit">Entrar</button>
+        </div>
+    </form>
+
+    <div style="text-align: center; margin: 30px 0; font-family: 'Montserrat Regular', sans-serif;">
+        <p style="margin-bottom: 10px;"><a href="Crialogin.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Não tenho uma conta</a></p>
+        <p style="margin-bottom: 0;"><a href="redefinirSenha.html" style="color: #5893f3; text-decoration: none; font-weight: 600;">Esqueci minha senha</a></p>
     </div>
 
-
-    <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#senha');
-
-        togglePassword.addEventListener('click', function () {
-            // Alterna o tipo do input entre 'password' e 'text'
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-
-            // Alterna o ícone entre o cadeado fechado e aberto
-            this.classList.toggle('bxs-lock-open');
-        });
-    </script>
-
+    <script src="../../frontend/assets/js/main.js"></script>
 </body>
 </html>

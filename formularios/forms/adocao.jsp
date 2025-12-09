@@ -72,28 +72,8 @@
             ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
           </p>
         </div>
-
-        <div class="right-column-stack">
-
-          <button class="menu-toggle" aria-label="Abrir menu">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
       </div>
     </div>
-
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
-        <li><a href="adocao.html">Quero Adotar</a></li>
-        <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-        <li><a href="pages/">Preciso de Ajuda</a></li>
-        <li><a href="#">Matérias</a></li>
-        <li><a href="#">Finais Felizes</a></li>
-        <li><a href="#">Tributo</a></li>
-      </ul>
-    </nav>
     <div class="line"></div>
   </header>
 
@@ -190,15 +170,10 @@
       <div class="coluna-links">
         <ul>
           <li><a href="<%= request.getContextPath() %>/frontend/index.html">Início</a></li>
-          <li><a href="<%= request.getContextPath() %>/frontend/pages/sobre-nos.html">A Acãochego</a></li>
           <li><a href="<%= request.getContextPath() %>/frontend/pages/adocao.html">Quero Adotar</a></li>
-          <li><a href="<%= request.getContextPath() %>/frontend/pages/apadrinhamento.html">Quero Apadrinhar</a></li>
         </ul>
         <ul>
-          <li><a href="<%= request.getContextPath() %>/frontend/pages/">Preciso de Ajuda</a></li>
-          <li><a href="#">Matérias</a></li>
-          <li><a href="#">Finais Felizes</a></li>
-          <li><a href="#">Tributo</a></li>
+          <li><a href="<%= request.getContextPath() %>/frontend/pages/contato.html">Contato</a></li>
         </ul>
       </div>
     </div>

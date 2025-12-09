@@ -1,11 +1,13 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   background-color: #ededed;
   background-image: url("background-pattern.png");
   background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 40px;
 }
 
 /* Container da Logo: Posiciona o logo no topo-esquerdo */
@@ -27,7 +29,7 @@ body {
   width: 420px;
   background: white;
   border-radius: 20px;
-  padding: 30px 40px;
+  padding: 25px 40px 30px 40px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 10;
@@ -37,6 +39,7 @@ body {
   font-size: 23px;
   color: #333;
   font-family: "Montserrat Bold", sans-serif;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -82,7 +85,6 @@ body {
   font-size: 1rem;
   font-family: "Montserrat Regular", sans-serif;
 }
-
 
 /* Torna o cursor pointer apenas para os ícones que ativam o toggle */
 #togglePassword,

@@ -77,6 +77,7 @@
       <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/index.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/fonts.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/menu.css" />
 
   
     <title>Alterar Animais</title>
@@ -110,28 +111,8 @@
                         ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
                     </p>
                 </div>
-
-               
-
-                    <button class="menu-toggle" aria-label="Abrir menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
             </div>
         </div>
-
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
-                <li><a href="adocao.html">Quero Adotar</a></li>
-                <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-                <li><a href="pages/">Preciso de Ajuda</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li><a href="#">Finais Felizes</a></li>
-                <li><a href="#">Tributo</a></li>
-            </ul>
-        </nav>
         <div class="line"></div>
     </header>
 
@@ -142,30 +123,70 @@
 <h2>Alterar Animal</h2>
 
 <form method="POST">
-    <input type="text" name="nomeBusca" placeholder="Digite o nome do animal" required>
-    <button type="submit">Buscar</button>
+    <div class="grupo-cx">
+        <div class="caixa">
+            <label for="nomeBusca">Nome do Animal</label>
+            <input type="text" id="nomeBusca" name="nomeBusca" required>
+        </div>
+    </div>
+
+    <div class="btn-container2">
+        <button type="submit">Buscar</button>
+    </div>
 </form>
 
 <% if(nome_ani != "") { %>
 
-<hr>
+<h2 style="margin-top: 60px;">Editar Dados do Animal</h2>
 
 <form method="POST" action="alterar_ani_salvar.jsp">
-
     <input type="hidden" name="nome_antigo" value="<%=nome_ani%>">
 
-    Nome: <input type="text" name="nome_ani" value="<%=nome_ani%>" required><br><br>
-    Data de Nascimento: <input class="input-nas" type="date" name="data_nas" value="<%=data_nas%>" required><br><br>
-    Raça: <input type="text" name="raca" value="<%=raca%>" required><br><br>
-    Porte: <input type="text" name="porte" value="<%=porte%>" required><br><br>
-    Sexo: <input type="text" name="sexo" value="<%=sexo%>" required><br><br>
-    Cidade: <input type="text" name="cidade" value="<%=cidade%>" required><br><br>
-    Estado: <input type="text" name="estado" value="<%=estado%>" required><br><br>
+    <div class="grupo-cx">
+        <div class="caixa">
+            <label for="nome_ani">Nome do Animal</label>
+            <input type="text" id="nome_ani" name="nome_ani" value="<%=nome_ani%>" required>
+        </div>
 
-    <button type="submit">Salvar Alterações</button>
+        <div class="caixa">
+            <label for="data_nas">Data de Nascimento</label>
+            <input type="date" id="data_nas" name="data_nas" value="<%=data_nas%>" required>
+        </div>
+
+        <div class="caixa">
+            <label for="raca">Raça</label>
+            <input type="text" id="raca" name="raca" value="<%=raca%>" required>
+        </div>
+
+        <div class="caixa">
+            <label for="sexo">Sexo</label>
+            <input type="text" id="sexo" name="sexo" value="<%=sexo%>" required>
+        </div>
+
+        <div class="caixa">
+            <label for="porte">Porte</label>
+            <input type="text" id="porte" name="porte" value="<%=porte%>" required>
+        </div>
+
+        <div class="caixa">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" value="<%=cidade%>" required>
+        </div>
+
+        <div class="caixa">
+            <label for="estado">Estado (UF)</label>
+            <input type="text" id="estado" name="estado" value="<%=estado%>" required>
+        </div>
+    </div>
+
+    <div class="btn-container2">
+        <button type="submit">Salvar Alterações</button>
+    </div>
 </form>
 
 <% } %>
 
+<script src="https://kit.fontawesome.com/45bbe533ad.js" crossorigin="anonymous"></script>
+<script src="<%= request.getContextPath() %>/frontend/assets/js/main.js"></script>
 </body>
 </html>

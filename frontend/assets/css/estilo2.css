@@ -227,19 +227,23 @@ main {
 #info-dogs {
   background-color: rgb(247 247 247);
   display: flex;
-  padding: 20px 50px;
-  height: 530px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 50px;
+  min-height: 530px;
   background-size: cover;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .container-slider {
   display: flex;
-  width: 800px;
+  max-width: 800px;
   height: 500px;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-left: 40px;
+  padding-left: 0px;
 }
 
 .container-images {
@@ -353,7 +357,8 @@ main {
   color: #333;
   padding-left: 50px;
   padding-top: 30px;
-  width: 1000px;
+  max-width: 1000px;
+  flex: 1;
 }
 
 .bloco2 h1 {
@@ -418,15 +423,15 @@ main {
 
 .linha-botao {
   margin-top: 25px;
-  display: grid;
-  grid-template-columns: 400px 400px;
+  display: flex;
+  justify-content: center;
   gap: 25px;
 }
 
 .btn-adocao {
   background-color: #5893f3;
   color: white;
-  padding: 12px 18px;
+  padding: 12px 40px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
@@ -666,9 +671,11 @@ footer {
 
 .footer-container {
   display: flex;
-  max-width: 1700px;
+  max-width: 1400px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px 40px;
 }
 
 .container-logos {
@@ -711,7 +718,8 @@ footer {
 
 .coluna-links {
   display: flex;
-  gap: 30px;
+  gap: 60px;
+  align-items: flex-start;
 }
 
 .footer-column ul {
@@ -719,6 +727,7 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  min-width: 150px;
 }
 
 .footer-column li {

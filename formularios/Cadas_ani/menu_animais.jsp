@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/index.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/fonts.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/menu.css" />
 
   
     <title>Gerenciar Animais</title>
@@ -58,28 +59,8 @@
                         ASSOCIAÇÃO PROTETORA DE ANIMAIS ABANDONADOS - ACÃOCHEGO
                     </p>
                 </div>
-
-               
-
-                    <button class="menu-toggle" aria-label="Abrir menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
             </div>
         </div>
-
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="pages/sobre-nos.html">A Acãochego</a></li>
-                <li><a href="adocao.html">Quero Adotar</a></li>
-                <li><a href="pages/apadrinhamento.html">Quero Apadrinhar</a></li>
-                <li><a href="pages/">Preciso de Ajuda</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li><a href="#">Finais Felizes</a></li>
-                <li><a href="#">Tributo</a></li>
-            </ul>
-        </nav>
         <div class="line"></div>
     </header>
 
@@ -101,5 +82,7 @@
     <a href="excluir_ani.jsp">Excluir Animal</a>
 </div>
 
+<script src="https://kit.fontawesome.com/45bbe533ad.js" crossorigin="anonymous"></script>
+<script src="<%= request.getContextPath() %>/frontend/assets/js/main.js"></script>
 </body>
 </html>
