@@ -636,11 +636,11 @@ main {
 
 .btn-empresas {
   text-align: center;
-  width: 100%;
 }
 
 .botao-empresas {
   cursor: pointer;
+  display: inline-block;
   background-color: #5893f3;
   color: white;
   border: 2px solid white;

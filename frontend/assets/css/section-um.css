@@ -851,11 +851,12 @@ a.btn-adotar:hover {
 
 .btn-empresas {
   text-align: center;
-  width: 100%;
+  padding-bottom: 100px;
 }
 
 .botao-empresas {
   cursor: pointer;
+  display: inline-block;
   background-color: #5893f3;
   color: white;
   border: 2px solid #fafafa;
@@ -865,8 +866,6 @@ a.btn-adotar:hover {
   font-weight: bold;
   font-size: 16px;
   transition: 0.3s;
-  margin-top: -2px;
-  margin-bottom: 30px;
 }
 
 .botao-empresas:hover {
