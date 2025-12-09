@@ -17,7 +17,7 @@
     }
 
     // CONFIG BANCO
-    String database = "projeto";
+    String database = "projeto2";
     String endereco = "jdbc:mysql://localhost:3306/" + database + "?useSSL=false&serverTimezone=UTC";
     String usuario  = "root";
     String senha    = "";
@@ -27,7 +27,7 @@
         Connection conexao = DriverManager.getConnection(endereco, usuario, senha);
 
         // Verifica se login já existe
-        String sqlCheck = "SELECT id FROM login WHERE login = ?";
+        String sqlCheck = "SELECT id_login FROM login WHERE login = ?";
         PreparedStatement check = conexao.prepareStatement(sqlCheck);
         check.setString(1, vlogin);
         ResultSet rs = check.executeQuery();

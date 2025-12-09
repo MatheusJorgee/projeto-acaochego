@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Cadastro Login</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
-
-    <style type="text/css">
-       
-
-
-
-
-    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../frontend/assets/css/estilo-login.css" />
+    <link rel="stylesheet" href="../../frontend/assets/css/forms.css" />
+    <link rel="stylesheet" href="../../frontend/assets/fonts.css" />
+    
+    <link rel="stylesheet" href="../../frontend/assets/css/login.css" />
 </head>
 
 <body>
-<div class="container">
-    <img class="logo link" 
-        src="<%= request.getContextPath() %>/frontend/assets/img/logo/logo-acaochego.png" alt="Logo Acãochego">
-</div>
+    <div class="container">
+        <img class="logo link" src="../../frontend/assets/img/logo/logo-acaochego.png"
+            alt="Logo Acãochego">
+    </div>
 
-<script>
-document.querySelector('.logo.link').addEventListener('click', () => {
-    window.location.href = "<%= request.getContextPath() %>/frontend/index.html";
-});
-</script>
+    <script>
+        document.querySelector('.logo.link').addEventListener('click', () => {
+            window.location.href = "../../frontend/index.html";
+        });
+    </script>
 
     <div class="wrapper">
         <h1>CADASTRE SUA CONTA</h1>
@@ -37,13 +36,18 @@ document.querySelector('.logo.link').addEventListener('click', () => {
             <div class="input-box">
                 <input type="text" placeholder="Usuário" id="login" name="login" required>
             </div>
+            
             <div class="input-box">
                 <input type="password" placeholder="Crie uma Senha" id="senha" name="senha" required>
-                <i class='bx bxs-lock' id="togglePassword"></i>
+                <i class='bx bxs-lock' id="togglePassword"></i> 
             </div>
+            
             <div class="input-box">
-                <input type="password" placeholder="Confirmar Senha" id="confirmar_senha" name="confirmar_senha" required>
+                <input type="password" placeholder="Confirmar Senha" id="confirmar_senha" name="confirmar_senha"
+                    required>
+                <i class='bx bxs-lock' id="toggleConfirmPassword"></i> 
             </div>
+            
             <button type="submit" class="btn">Cadastrar</button>
         </form>
         <p class="register-link"><a href="login.html">Já tenho uma conta</a></p>
@@ -51,18 +55,31 @@ document.querySelector('.logo.link').addEventListener('click', () => {
 
 
     <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#senha');
+        // Função genérica para configurar o toggle da senha
+        function setupPasswordToggle(toggleSelector, passwordSelector) {
+            const toggle = document.querySelector(toggleSelector);
+            const password = document.querySelector(passwordSelector);
 
-        togglePassword.addEventListener('click', function () {
-            // Alterna o tipo do input entre 'password' e 'text'
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
+            if (toggle && password) {
+                toggle.addEventListener('click', function () {
+                    // Alterna o tipo do input entre 'password' e 'text'
+                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password.setAttribute('type', type);
 
-            // Alterna o ícone entre o cadeado fechado e aberto
-            this.classList.toggle('bxs-lock-open');
-        });
+                    // Altera o ícone: 'bxs-lock' (fechado) para 'bxs-lock-open' (aberto)
+                    this.classList.toggle('bxs-lock-open');
+                    this.classList.toggle('bxs-lock');
+                });
+            }
+        }
+
+        // Configura o toggle para o campo 'Crie uma Senha'
+        setupPasswordToggle('#togglePassword', '#senha');
+
+        // Configura o toggle para o campo 'Confirmar Senha'
+        setupPasswordToggle('#toggleConfirmPassword', '#confirmar_senha');
     </script>
 
 </body>
+
 </html>

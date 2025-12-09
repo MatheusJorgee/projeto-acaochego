@@ -8,7 +8,7 @@
     String vsenha = request.getParameter("senha");
 
     // CONFIG BD
-    String database = "projeto";
+    String database = "projeto2";
     String endereco = "jdbc:mysql://localhost:3306/" + database ;
     String usuario  = "root";
     String senha    = "";

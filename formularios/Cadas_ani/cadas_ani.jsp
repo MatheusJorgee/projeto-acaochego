@@ -19,6 +19,12 @@
         String vraca     = request.getParameter("raca");
         String vporte    = request.getParameter("porte");
         String vsexo     = request.getParameter("sexo");
+        if (vsexo == null || vsexo.trim().isEmpty()) {
+            vsexo = "";
+        } else {
+            String primeiraLetra = vsexo.trim().substring(0, 1).toUpperCase();
+            vsexo = primeiraLetra; // salva apenas 'M' ou 'F'
+        }
         String vcidade   = request.getParameter("cidade"); // Campo adicionado
         String vestado   = request.getParameter("estado"); // Campo adicionado (UF)
         
@@ -108,7 +114,6 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/index.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/fonts.css" />
     <link rel="stylesheet" href="<%= request.getContextPath() %>/frontend/assets/css/forms.css" />
     <title>Cadastrar Animal</title>
@@ -224,6 +229,11 @@
                 </div>
 
          <div class="caixa">
+            <label>Sexo</label>
+            <input type="text" name="sexo" required>
+        </div>
+
+        <div class="caixa">
                 <label for="porte"> Porte</label>
                 <select name="porte" class="caixa">
                     <option value="Filhote">Filhote</option>
@@ -232,11 +242,6 @@
                     <option value="grande">Porte Grande</option>
                 </select>
                 </div>
-
-        <div class="caixa">
-            <label>Sexo</label>
-            <input type="text" name="sexo" required>
-        </div>
 
         <div class="caixa">
             <label>Cidade</label>
@@ -282,8 +287,6 @@
 
 
 </form>
-
-
 
 </body>
 </html>

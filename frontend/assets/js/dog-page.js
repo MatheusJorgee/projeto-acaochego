@@ -1,10 +1,16 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
+console.log("ID encontrado:", id);
+console.log("Objeto cachorros:", cachorros);
+
 const dog = cachorros[id];
+
+console.log("Dog carregado:", dog);
 
 if (!dog) {
     document.body.innerHTML = "<h1>Cachorro não encontrado!</h1>";
+    console.error("Cachorro não encontrado para ID:", id);
 }
 
 document.getElementById("dog-name").textContent = dog.nome;

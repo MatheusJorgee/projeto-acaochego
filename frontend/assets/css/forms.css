@@ -1,160 +1,607 @@
- body {
+/* ==============================
+    CSS PÁGINAS ADMINISTRATIVAS - PADRONIZADO
+================================= */
+
+* {
   margin: 0;
-  font-family: "Montserrat-Regular", sans-serif;
-  font-size: 16px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+}
 
+/* ==============================
+    TOPO E LOGO
+================================= */
 .top-bar {
-    background: #fff;
-    width: 100%;
-    position: relative;
+  background: #fafafa;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
 }
 
 .container {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-    max-height: 150px;
-    margin-left: 20px;
-}        
+  cursor: pointer;
+  max-height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
 
 /* ==============================
     NOME E SLOGAN
 ================================= */
 .name-slogan {
-    text-align: center;
-    margin-right: 140px;
-    color: #5893f3;
+  text-align: center;
+  color: #5893f3;
+  flex: 1;
+  padding: 0 20px;
 }
 
 .name-slogan .name {
-    font-family: "vaseline-extra";
-    /* Fonte personalizada */
-    font-size: 55px;
-    margin: 5px auto;
+  font-family: "Vaseline Extra", sans-serif;
+  font-size: 3.5rem;
+  margin: 5px auto;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .name-slogan .slogan {
-    font-family: "Montserrat-bold", sans-serif;
-    font-size: 18px;
-    margin-top: 0;
-}
-   
-        h1 {
-            margin-top: 150px;
-            font-size: 45px;
-            color: #5aa0ff;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-         h2 {
-            margin-top: 130px;
-            font-size: 45px;
-            color: #5aa0ff;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-          .btn-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 50px;
-          margin-top: 40px;
-      }
-
-        
-
-        /* Botões da pagina de alterar*/
-        form {
-            display: flex;
-            flex-direction: column; /* coloca input e botão um abaixo do outro */
-            align-items: center;    /* centraliza horizontalmente */
-            gap: 20px;              /* espaço entre input e botão */
-            max-width: 900px; /* Igual à largura máxima do .grupo-cx */
-            margin: 0 auto;
-        }
-
-form input[type="text"] {
-    width: 600px; /* mesmo tamanho da imagem */
-    padding: 15px 25px;
-    border: 2px solid #5893f3;
-    border-radius: 30px;
-    font-size: 18px;
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #5a6473;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* Botão */
-form button {
-    background-color: #5893f3;
-    color: #fff;
-    border: none;
-    padding: 12px 35px;
-    font-size: 18px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* ==============================
+    BOTÃO HAMBÚRGUER
+================================= */
+.menu-toggle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 4px 15px rgba(88, 147, 243, 0.3);
+  transition: all 0.3s ease;
 }
 
-form button:hover {
-    background-color: #5aa0ff;
-    transform: scale(1.06);
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 147, 243, 0.4);
 }
 
+.menu-toggle i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
 
-/* ======================================================================
-        Caixa de texto formulario de Cadastro de um novo animal
-========================================================================*/
-/* GRID PRINCIPAL */
+.menu-toggle.show {
+  background: #5a6473;
+}
+
+.menu-toggle.show i {
+  transform: rotate(90deg);
+}
+
+/* ==============================
+    MENU HAMBÚRGUER
+================================= */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 160px;
+  top: 192px;
+  background: #fafafa;
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  border: 2px solid #f0f0f0;
+}
+
+.menu ul.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul li {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.menu ul li:hover {
+  background-color: #f8f9fa;
+}
+
+.menu ul li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-left: 45px;
+}
+
+.menu ul li a::before {
+  content: "→";
+  position: absolute;
+  left: 20px;
+  color: #5893f3;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+
+.menu ul li a:hover {
+  color: #5893f3;
+  padding-left: 50px;
+}
+
+.menu ul li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+/* ==============================
+    LINHA DIVISÓRIA
+================================= */
+.line {
+  height: 5px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  box-shadow: 0 2px 10px rgba(88, 147, 243, 0.3);
+}
+
+/* ==============================
+    TÍTULOS
+================================= */
+h1, h2 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 3rem;
+  color: #5893f3;
+  text-align: center;
+  margin: 80px auto 60px;
+  letter-spacing: 3px;
+  position: relative;
+  padding-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1::after, h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #5893f3, #4a7dd8);
+  border-radius: 3px;
+}
+
+/* ==============================
+    CONTAINER DE BOTÕES (MENU)
+================================= */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.btn-container a {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  color: white;
+  text-decoration: none;
+  padding: 20px 35px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Montserrat Bold", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(88, 147, 243, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-container a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-container a:hover::before {
+  left: 100%;
+}
+
+.btn-container a:hover {
+  background: linear-gradient(135deg, #4a7dd8, #3d8fe6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(88, 147, 243, 0.45);
+}
+
+/* ==============================
+    FORMULÃRIO
+================================= */
+form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px 80px;
+}
+
+/* ==============================
+    GRID DO FORMULÃRIO (2 COLUNAS)
+================================= */
 .grupo-cx {
-   display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px 80px;
-    width: 100%;
-    margin-right:400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 70px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
 }
 
-.caixa{
-    display: flex;
-    flex-direction: column;
+/* ==============================
+    CAMPOS COM LABELS
+================================= */
+.caixa {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa:first-child {
+  grid-column: span 2;
 }
 
 .caixa label {
-    font-size: 20px;
-    padding-bottom: 10px; 
-    font-family: 'Montserrat-bold';
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
 }
 
+.caixa input[type="text"],
+.caixa input[type="date"],
+.caixa select {
+  width: 100%;
+  padding: 16px 24px;
+  border: 3px solid #d4e8f7;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: normal;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
+.caixa input:focus,
+.caixa select:focus {
+  border-color: #5893f3;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(88, 147, 243, 0.12);
+  transform: translateY(-2px);
+  z-index: 10;
+}
 
-/* ======================================================================
-      BOTÃO DA PAGINA DE CADASTRO DE ANIMAIS 
-========================================================================*/
+.caixa:focus-within {
+  z-index: 100;
+}
+
+.caixa input:hover:not(:focus),
+.caixa select:hover:not(:focus) {
+  border-color: #5893f3;
+  background: white;
+}
+
+.caixa input::placeholder {
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+.caixa select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235893f3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.caixa select option {
+  padding: 12px;
+  background: white;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Campo de data - ajuste especÃ­fico */
+.caixa input[type="date"] {
+  padding: 16px 24px;
+  cursor: pointer;
+}
+
+.caixa input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(57%) sepia(71%) saturate(1337%) hue-rotate(194deg)
+    brightness(98%) contrast(94%);
+}
+
+/* ==============================
+    BOTÃƒO DE CADASTRAR
+================================= */
 .btn-container2 {
-    grid-column: span 2; /* ocupa largura total do grid */
-    display: flex;
-    justify-content: center; /* botão centralizado */
-    margin-top: 20px;
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .btn-container2 button {
-    background: #5893f3;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 25px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+  background: linear-gradient(135deg, #5893f3 0%, #4a7dd8 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 18px 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Montserrat Bold", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(88, 147, 243, 0.35);
+  position: relative;
+  overflow: hidden;
 }
 
+.btn-container2 button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-container2 button:hover::before {
+  left: 100%;
+}
 
 .btn-container2 button:hover {
-    background: #5aa0ff;
-    transform: scale(1.07);
+  background: linear-gradient(135deg, #4a7dd8 0%, #3d8fe6 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(88, 147, 243, 0.45);
+}
+
+.btn-container2 button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 147, 243, 0.4);
+}
+
+/* ==============================
+    ANIMAÃ‡ÃƒO DE ENTRADA
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ==============================
+    FORMULÁRIOS (ALTERAR/EXCLUIR)
+================================= */
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 30px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+form input[type="text"],
+form input[type="date"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 18px 28px;
+  border: 3px solid #d4e8f7;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+form input:focus {
+  border-color: #5893f3;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(88, 147, 243, 0.12);
+  transform: translateY(-2px);
+}
+
+form input:hover:not(:focus) {
+  border-color: #5893f3;
+  background: white;
+}
+
+form input::placeholder {
+  color: #b0b0b0;
+}
+
+/* Label nos formulários de alterar */
+form label {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-right: 15px;
+  min-width: 200px;
+}
+
+/* Linha de input com label */
+form > * {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+    BOTÕES DOS FORMULÁRIOS
+================================= */
+form button,
+form button[type="submit"] {
+  background: linear-gradient(135deg, #5893f3, #4a7dd8);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 18px 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Montserrat Bold", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(88, 147, 243, 0.35);
+  margin-top: 10px;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #4a7dd8, #3d8fe6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(88, 147, 243, 0.45);
+}
+
+form button:active {
+  transform: translateY(-2px);
+}
+
+/* ==============================
+    HR (SEPARADOR)
+================================= */
+hr {
+  max-width: 700px;
+  margin: 40px auto;
+  border: none;
+  border-top: 2px solid #e0e0e0;
+}
+
+/* ==============================
+    HIDDEN INPUT
+================================= */
+input[type="hidden"] {
+  display: none;
+}
+
+/* ==============================
+    ANIMAÇÃO
+================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

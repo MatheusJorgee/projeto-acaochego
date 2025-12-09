@@ -1,0 +1,132 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ededed;
+  background-image: url("background-pattern.png");
+  background-size: cover;
+}
+
+/* Container da Logo: Posiciona o logo no topo-esquerdo */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  z-index: 5;
+}
+
+/* Caixa Centralizada do Formulário */
+.wrapper {
+  width: 420px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10;
+}
+
+.wrapper h1 {
+  font-size: 23px;
+  color: #333;
+  font-family: "Montserrat Bold", sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Container de Input (Input-box) */
+
+.caixa input,
+.caixa select {
+  width: 100%;
+  padding: 18px 28px;
+  border: 3px solid #d4e8f7;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: normal;
+}
+
+.caixa input::placeholder {
+  color: #b0b0b0;
+  font-size: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+}
+
+/* Select customizado */
+.caixa select {
+  cursor: pointer;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-size: 16px;
+  padding-right: 55px;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.caixa select option {
+  padding: 15px;
+  background: white;
+  color: #333;
+  font-size: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+}
+
+
+/* Torna o cursor pointer apenas para os ícones que ativam o toggle */
+#togglePassword,
+#toggleConfirmPassword {
+  cursor: pointer;
+}
+/* Botão (sobrescreve o forms.css) */
+.btn {
+  width: 100%;
+  height: 45px;
+  background-color: #5893f3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4a7dd8;
+}
+
+/* Links Adicionais (Esqueci a Senha / Registrar) */
+.forgot-password,
+.register-link {
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.forgot-password a,
+.register-link a {
+  color: #5893f3;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover,
+.register-link a:hover {
+  color: #4a7dd8;
+  text-decoration: underline;
+}

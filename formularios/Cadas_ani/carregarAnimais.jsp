@@ -9,7 +9,7 @@ String senha    = "";
 Class.forName("com.mysql.jdbc.Driver");
 Connection conexao = DriverManager.getConnection(endereco, usuario, senha);
 
-String sql = "SELECT id, nome_ani FROM animais ORDER BY nome_ani";
+String sql = "SELECT id_ani, nome_ani FROM animais ORDER BY nome_ani";
 PreparedStatement stm = conexao.prepareStatement(sql);
 ResultSet rs = stm.executeQuery();
 

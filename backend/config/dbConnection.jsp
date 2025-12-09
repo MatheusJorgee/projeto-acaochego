@@ -1,4 +1,5 @@
-<%@ page import="java.sql.*" %>
+/*
+%@ page import="java.sql.*" %>
 
 <%
     // Arquivo responsável por conectar o meu sistema ao banco MySQL.
@@ -22,3 +23,4 @@
         out.println("Erro ao conectar ao banco: " + e.getMessage());
     }
 %>
+*/

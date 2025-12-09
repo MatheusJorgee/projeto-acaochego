@@ -6,11 +6,12 @@
     // Esse controller recebe os dados do formulário de apadrinhamento.
 
     String nome = request.getParameter("nome");
-    String valor = request.getParameter("valor");
-    String animalId = request.getParameter("animal_id");
+    String email = request.getParameter("email");
+    String cel = request.getParameter("cel");
+    String animalId = request.getParameter("id_ani");
 
     // Enviando os dados para o model
-    boolean sucesso = salvarApadrinhamento(conn, nome, valor, animalId);
+    boolean sucesso = salvarApadrinhamento(conn, nome, email, cel, animalId);
 
     // Redirecionando dependendo do resultado
     if(sucesso){
