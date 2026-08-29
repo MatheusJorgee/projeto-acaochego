@@ -1,173 +1,109 @@
-# 🐾 Projeto Acãochego
+# Projeto Acãochego
 
-Sistema web para gerenciamento de adoção de animais desenvolvido em JSP/Java.
+Sistema web para gerenciamento de adoção de animais, desenvolvido como projeto acadêmico do curso de Ciência da Computação.
 
-## 📋 Pré-requisitos
+O site apresenta os animais disponíveis, recebe pedidos de adoção e apadrinhamento por formulário, e conta com uma área administrativa para cadastro e manutenção dos animais.
 
-Antes de começar, você precisa ter instalado em sua máquina:
+## Funcionalidades
 
-- **XAMPP** (versão 8.0 ou superior) - [Download](https://www.apachefriends.org/pt_br/download.html)
-- **MySQL** (incluído no XAMPP)
-- **Java JDK** 8 ou superior - [Download](https://www.oracle.com/java/technologies/downloads/)
-- Navegador web moderno (Chrome, Firefox, Edge)
+- **Catálogo de animais** disponíveis para adoção, com página de informações individual
+- **Formulário de adoção** com registro no banco e página de confirmação
+- **Apadrinhamento** de animais, com fluxo próprio de confirmação
+- **Formulário de contato** com envio de e-mail via SMTP
+- **Área administrativa** com login, para cadastrar, alterar e excluir animais
+- **Criação de conta e redefinição de senha** para os usuários administrativos
 
-## 🚀 Instalação e Configuração
+## Tecnologias
 
-### 1️⃣ Instalar XAMPP
+| Camada | Tecnologia |
+| --- | --- |
+| Back-end | Java com JSP |
+| Servidor | Apache Tomcat (via XAMPP) |
+| Banco de dados | MySQL |
+| Driver | MySQL Connector/J 5.1.49 |
+| Tags | JSTL 1.2 |
+| E-mail | JavaMail (SMTP do Gmail) |
+| Front-end | HTML, CSS e JavaScript |
+| Tipografia | Montserrat, Nunito e Poppins |
 
-1. Baixe e instale o XAMPP
-2. Durante a instalação, certifique-se de marcar:
-   - ✅ Apache
-   - ✅ MySQL
-   - ✅ Tomcat
+## Estrutura
 
-### 2️⃣ Configurar o Banco de Dados
+```
+projeto-acaochego/
+├── frontend/
+│   ├── index.html                # Página inicial
+│   ├── pages/                    # Adoção, contato e informações do animal
+│   └── assets/                   # CSS, JavaScript, fontes e imagens
+├── backend/
+│   ├── config/dbConnection.jsp   # Conexão com o MySQL
+│   ├── controllers/              # Adoção, apadrinhamento e contato
+│   ├── models/                   # Acesso a dados
+│   └── views/                    # Páginas de confirmação
+├── formularios/
+│   ├── login/                    # Login, criação de conta e redefinição
+│   ├── forms/                    # Formulário de adoção e termos
+│   └── Cadas_ani/                # CRUD de animais (área administrativa)
+├── docs/database_completo.sql    # Script de criação do banco
+└── WEB-INF/                      # Bibliotecas e configuração da aplicação
+```
 
-1. Abra o **XAMPP Control Panel**
-2. Inicie o **MySQL** clicando em "Start"
-3. Clique em "Admin" do MySQL (abrirá o phpMyAdmin no navegador)
-4. No phpMyAdmin:
-   - Clique em "Importar" no menu superior
-   - Clique em "Escolher arquivo"
-   - Navegue até `c:\xampp\tomcat\webapps\projeto-acaochego\docs\database_completo.sql`
-   - Clique em "Executar" no final da página
-   - ✅ O banco de dados `projeto2` será criado com todas as tabelas e dados
+## Banco de dados
 
-### 3️⃣ Instalar Biblioteca JavaMail
+O script `docs/database_completo.sql` cria o banco `projeto2` com cinco tabelas: `animais`, `cidade`, `acao` (registro das adoções), `contatos` (mensagens do formulário) e `login` (usuários administrativos). O script já popula o banco com as cidades, os usuários de acesso e doze animais de exemplo.
 
-Para que o sistema envie e-mails, você precisa instalar a biblioteca JavaMail:
+## Como executar
 
-1. Baixe os seguintes arquivos:
-   - [javax.mail.jar](https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.6.2) 
-   - [activation.jar](https://mvnrepository.com/artifact/javax.activation/activation/1.1.1)
+**Pré-requisitos:** XAMPP 8.0 ou superior, com Apache, MySQL e Tomcat, e Java JDK 8 ou superior.
 
-2. Copie os arquivos `.jar` para a pasta:
-   ```
-   c:\xampp\tomcat\lib\
-   ```
+1. **Importe o banco.** No XAMPP Control Panel, inicie o MySQL e abra o phpMyAdmin. Em Importar, selecione `docs/database_completo.sql` e execute — o banco `projeto2` será criado com as tabelas e os dados iniciais.
 
-### 4️⃣ Implantar o Projeto
+2. **Instale as bibliotecas do JavaMail.** Baixe [javax.mail.jar](https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.6.2) e [activation.jar](https://mvnrepository.com/artifact/javax.activation/activation/1.1.1) e copie os dois para `c:\xampp\tomcat\lib\`.
 
-1. Certifique-se de que a pasta do projeto está em:
-   ```
-   c:\xampp\tomcat\webapps\projeto-acaochego\
-   ```
+3. **Posicione o projeto** em `c:\xampp\tomcat\webapps\projeto-acaochego\`.
 
-2. Se você baixou o projeto em outro local, mova toda a pasta para o caminho acima
+4. **Configure o envio de e-mail.** Em `backend/controllers/ContatoController.jsp`, por volta da linha 47, preencha as constantes `emailRemetente` e `senhaApp` com seu endereço e uma senha de app do Gmail. Sem isso, o formulário de contato não envia.
 
-### 5️⃣ Iniciar o Servidor Tomcat
-
-1. Abra o **XAMPP Control Panel**
-2. Inicie o **Tomcat** clicando em "Start"
-3. Aguarde até que o status fique verde
-
-## 🌐 Acessando o Site
-
-Após iniciar o MySQL e Tomcat, abra seu navegador e acesse:
+5. **Inicie o Tomcat** no XAMPP e acesse:
 
 ```
 http://localhost:8080/projeto-acaochego/frontend/index.html
 ```
 
-### 📍 Páginas Disponíveis
+A área administrativa fica em `formularios/login/login.html`. As credenciais de teste (`admin` / `admin123`) vêm no script do banco.
 
-- **Página Inicial**: `http://localhost:8080/projeto-acaochego/frontend/index.html`
-- **Adoção**: `http://localhost:8080/projeto-acaochego/frontend/pages/adocao.html`
-- **Contato**: `http://localhost:8080/projeto-acaochego/frontend/pages/contato.html`
-- **Informações do Animal**: `http://localhost:8080/projeto-acaochego/frontend/pages/info-animal.html`
+### Problemas comuns
 
-### 🔐 Acesso Administrativo
+| Sintoma | Verificar |
+| --- | --- |
+| HTTP 404 | Tomcat rodando e projeto em `c:\xampp\tomcat\webapps\` |
+| Erro de conexão com o banco | MySQL rodando e banco `projeto2` importado |
+| E-mails não enviam | Os dois `.jar` em `c:\xampp\tomcat\lib\` e Tomcat reiniciado |
+| Tomcat não inicia | Porta 8080 livre e JDK instalado |
 
-Para acessar a área de cadastro de animais:
+## Contexto e aprendizados
 
-```
-http://localhost:8080/projeto-acaochego/formularios/login/login.html
-```
+Este foi o primeiro projeto do curso, construído enquanto HTML, CSS, JavaScript e JSP ainda estavam sendo aprendidos. O projeto está encerrado e não recebe mais alterações — o código permanece como foi entregue.
 
-**Credenciais padrão:**
-- **Usuário**: `admin`
-- **Senha**: `admin123`
+### Credencial exposta
 
-⚠️ **IMPORTANTE**: Altere a senha padrão após o primeiro acesso!
+Uma versão anterior deste README, e o próprio `ContatoController.jsp`, traziam a senha de app de uma conta Gmail escrita diretamente no código. A credencial ficou visível no repositório público até ser identificada em uma revisão posterior.
 
-## 📧 Configuração de E-mail
+A conta havia sido criada apenas para testes do projeto, sem uso pessoal, e **já foi excluída** — a credencial não tem mais validade.
 
-O sistema está configurado para enviar e-mails através do Gmail. As credenciais atuais são:
+O registro fica aqui de propósito, porque a lição vale mais anotada do que apagada: credencial não entra em código versionado nem em documentação. Remover do arquivo também não resolve, já que o histórico do Git preserva o conteúdo — a única medida efetiva é revogar a credencial. O caminho correto seria lê-la de variável de ambiente ou de um arquivo de configuração fora do versionamento.
 
-- **E-mail**: testeacaochego@gmail.com
-- **Senha de App**: goxi cxse ggbe zjwj
+O login administrativo é caso diferente: `admin` / `admin123` são dados de teste para popular o ambiente local, que roda apenas em `localhost`.
 
-Para usar seu próprio e-mail:
+### O que seria feito diferente
 
-1. Abra o arquivo: `backend\controllers\ContatoController.jsp`
-2. Localize as linhas 51-52:
-   ```java
-   props.put("mail.smtp.user", "testeacaochego@gmail.com");
-   String senha = "goxi cxse ggbe zjwj";
-   ```
-3. Substitua pelo seu e-mail e senha de app do Gmail
-4. Para gerar uma senha de app do Gmail:
-   - Acesse [Configurações de Segurança do Google](https://myaccount.google.com/security)
-   - Ative a verificação em duas etapas
-   - Vá em "Senhas de app" e gere uma nova senha
+Separar configuração de código, parametrizar as consultas ao banco, concentrar o acesso a dados fora das páginas JSP e padronizar a estrutura de pastas, hoje dividida entre `backend`, `frontend` e `formularios` sem um critério único.
 
-## 🛠️ Solução de Problemas
+## Equipe
 
-### Erro: "HTTP Status 404 – Not Found"
-- ✅ Verifique se o Tomcat está rodando no XAMPP
-- ✅ Confirme se a URL está correta: `http://localhost:8080/projeto-acaochego/...`
-- ✅ Certifique-se de que a pasta está em `c:\xampp\tomcat\webapps\`
+Projeto desenvolvido em grupo:
 
-### Erro: "Cannot connect to database"
-- ✅ Verifique se o MySQL está rodando no XAMPP
-- ✅ Confirme se o banco `projeto2` foi criado
-- ✅ Execute o script `database_completo.sql` novamente
-
-### E-mails não estão sendo enviados
-- ✅ Verifique se os arquivos `.jar` do JavaMail estão em `c:\xampp\tomcat\lib\`
-- ✅ Reinicie o Tomcat após adicionar os arquivos
-- ✅ Confirme se as credenciais de e-mail estão corretas
-
-### Tomcat não inicia
-- ✅ Verifique se a porta 8080 não está em uso por outro programa
-- ✅ Verifique se o Java JDK está instalado corretamente
-- ✅ Reinicie o computador e tente novamente
-
-## 📁 Estrutura do Projeto
-
-```
-projeto-acaochego/
-├── backend/              # Controllers e lógica de negócio
-│   ├── controllers/      # Controladores JSP
-│   └── config/          # Configuração do banco de dados
-├── frontend/            # Interface do usuário
-│   ├── assets/         # CSS, JS e imagens
-│   ├── pages/          # Páginas HTML
-│   └── index.html      # Página principal
-├── formularios/        # Formulários de cadastro e login
-│   ├── Cadas_ani/      # Cadastro de animais
-│   ├── forms/          # Formulários públicos
-│   └── login/          # Sistema de login
-├── docs/               # Documentação e scripts SQL
-│   └── database_completo.sql
-└── README.md           # Este arquivo
-```
-
-## 🐕 Animais Cadastrados
-
-O sistema vem com 12 cães pré-cadastrados:
-- Nanda, Carminha, Cora, Bono, Pituca, Roni, Tony, Chocolate, Bruna, Caramelo, Mel e Brown
-
-Todos localizados em São Paulo-SP e Guarulhos-SP.
-
-## 📞 Suporte
-
-Se encontrar problemas, verifique:
-1. Se todos os serviços do XAMPP estão rodando (MySQL + Tomcat)
-2. Se a porta 8080 está disponível
-3. Se os arquivos JavaMail estão na pasta correta
-4. Se o banco de dados foi importado corretamente
+- [Matheus Jorge](https://github.com/MatheusJorgee)
+- [Adrielly Thuner](https://github.com/AdriellyThuner)
+- [Kimberly Ledio](https://github.com/kimberlyledio)
 
 ---
-
-**Desenvolvido com ❤️ para o Projeto Acãochego**
